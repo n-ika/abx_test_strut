@@ -1,0 +1,92 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0.0124716553288 
+xmax = 2.07777777778 
+tiers? <exists> 
+size = 2 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "phone" 
+        xmin = 0.0124716553288 
+        xmax = 2.07777777778 
+        intervals: size = 12 
+        intervals [1]:
+            xmin = 0.0124716553288 
+            xmax = 0.122222222222 
+            text = "Z" 
+        intervals [2]:
+            xmin = 0.122222222222 
+            xmax = 0.21201814059 
+            text = "UH1" 
+        intervals [3]:
+            xmin = 0.21201814059 
+            xmax = 0.301814058957 
+            text = "F" 
+        intervals [4]:
+            xmin = 0.301814058957 
+            xmax = 0.880498866213 
+            text = "sp" 
+        intervals [5]:
+            xmin = 0.880498866213 
+            xmax = 0.950340136054 
+            text = "Z" 
+        intervals [6]:
+            xmin = 0.950340136054 
+            xmax = 1.09002267574 
+            text = "EH1" 
+        intervals [7]:
+            xmin = 1.09002267574 
+            xmax = 1.21972789116 
+            text = "F" 
+        intervals [8]:
+            xmin = 1.21972789116 
+            xmax = 1.72857142857 
+            text = "sp" 
+        intervals [9]:
+            xmin = 1.72857142857 
+            xmax = 1.88820861678 
+            text = "Z" 
+        intervals [10]:
+            xmin = 1.88820861678 
+            xmax = 1.98798185941 
+            text = "UH1" 
+        intervals [11]:
+            xmin = 1.98798185941 
+            xmax = 2.02789115646 
+            text = "F" 
+        intervals [12]:
+            xmin = 2.02789115646 
+            xmax = 2.07777777778 
+            text = "sp" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "word" 
+        xmin = 0.0124716553288 
+        xmax = 2.07777777778 
+        intervals: size = 6 
+        intervals [1]:
+            xmin = 0.0124716553288 
+            xmax = 0.3503500161063771 
+            text = "ZUHF" 
+        intervals [2]:
+            xmin = 0.3503500161063771 
+            xmax = 0.8532537963725334 
+            text = "sp" 
+        intervals [3]:
+            xmin = 0.8532537963725334 
+            xmax = 1.21972789116 
+            text = "ZEF" 
+        intervals [4]:
+            xmin = 1.21972789116 
+            xmax = 1.72857142857 
+            text = "sp" 
+        intervals [5]:
+            xmin = 1.72857142857 
+            xmax = 2.0711292160532246 
+            text = "ZUHF" 
+        intervals [6]:
+            xmin = 2.0711292160532246 
+            xmax = 2.07777777778 
+            text = "sp" 

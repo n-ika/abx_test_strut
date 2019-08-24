@@ -1,0 +1,81 @@
+for i in *.wav ; do sox "$i" -r 16000 "downsampled/$i"; done
+
+
+Acoustic Models
+
+- french : /scratch2/jkaradayi/data/alignments_models/align_french_correct/ 
+- english : /scratch2/jkaradayi/data/alignments_models/align_english_train/
+
++ am_trisa
+
+
+Corpora
+
+- "librispeech" en : /scratch1/projects/challenge2017/librispeech-abkhazia/data
+- "librispeech" fr : /scratch1/projects/challenge2017/librivox_fr_final/train/step/data
+
+
+
+Command
+ln -s /scratch2/jkaradayi/data/alignments_models/align_french_correct/language ./trial_corpus/train/am_trisa/lang
+
+ln -s /scratch2/jkaradayi/data/alignments_models/align_english_train/am_trisa trial_corpus/train/am_trisa
+
+
+===============
+SPLIT CORPUS
+
+abkhazia split --validate -t 0.01 ./en_corpus_jan2019_abkhazia/
+
+DECODE
+
+abkhazia decode sa -o OUT_FOLDER --recipe -l LM -a AM -f FEAT CORPUS
+
+===============
+
+ lattice-to-post --acoustic-scale=0.1 ark:1.lats ark:- | \
+    gmm-acc-stats 10.mdl "$feats" ark:- 1.acc
+
+===============
+
+fstprint --isymbols=fr_lang/phones.txt --osymbols=fr_lang/phones.txt  --save_isymbols=isymbols.txt --save_osymbo
+ls=osymbols.txt fr_lang/G.fst fr_lang/Gtest.txt
+
+fstcompile --isymbols=fr_lang/phones.txt --osymbols=fr_lang/phones.txt fr_lang/Gtest.txt fr_lang/Gtest.fst
+
+
+===============
+
+
+./foma 
+print dot > Gtest.dot
+read regex v -> z // _ a ;
+
+dot -T png -O Gtest.dot 
+
+===============
+
+
+CALCULATE FEATURES
+
+abkhazia features mfcc --cmvn ./fr_corpus_jan2019_abkhazia/split/test/
+abkhazia features mfcc --cmvn ./fr_corpus_jan2019_abkhazia/split/train/
+
+
+
+==> RECALCULATE FEATURES AND RETRAIN LM AND AM
+
+
+abkhazia decode sa  -o ./test_decode_fr_trisa_0LM --recipe -l ./flatLM_1_fr -a ./am_julien_en -f ./fr_corpus_jan2019_abkhazia/split/test/features/ ./fr_corpus_jan2019_abkhazia/split/test/
+
+
+GET POSTERIORGRAMS
+
+    ==> CORRECT COMMAND
+
+        CORRECT CORRECT
+
+        lattice-to-post --acoustic-scale=0.083333 "ark:gunzip -c lat.*.gz|" ark:- | post-to-phone-post /scratch2/njurov/abkhazia_june/english_corpus/split/train/triphone-sa/final.alimdl ark:- ark,t:phones_en2.post
+
+
+

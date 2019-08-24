@@ -1,0 +1,8 @@
+Nous recueillons des informations sur la performance des participants et sur leur opinion. Veuillez répondre aux questions suivantes.
+None
+
+Qu'avez-vous pensé de cette expérience ? Avez-vous eu des problèmes techniques avec le site web ? Auriez-vous des remarques ou des commentaires ?
+Multiline_Textbox 50, 7
+
+Avez-vous une idée de l'objectif de notre recherche ? Si oui, quel est-il ?
+Multiline_Textbox 50, 7

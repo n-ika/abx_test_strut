@@ -1,0 +1,138 @@
+---
+
+title: "Posterior grams"
+output: html_document
+---
+
+```{r include=FALSE}
+library(ggplot2)
+library(magrittr)
+library(dplyr)
+library("scales")
+library("reshape2")
+```
+
+
+```{r include=FALSE}
+
+file_path <- file.path("/Users/njurov/Documents/Diderot/Memoire_M2/abx_test_strut/model/supervised/posterior_grams/extracted_pgs/")
+
+FR1 <- readr::read_csv(paste0(file_path, "triplet007_01_FR.csv"))
+FR2 <- readr::read_csv(paste0(file_path, "triplet007_02_FR.csv"))
+FR3 <- readr::read_csv(paste0(file_path, "triplet007_03_FR.csv"))
+
+EN3 <- readr::read_csv(paste0(file_path, "triplet007_03_EN.csv"))
+
+EN <- readr::read_csv(paste0(file_path, "spk01_triplet009_02_EN.csv")) 
+FR <- readr::read_csv(paste0(file_path, "spk01_triplet009_02_FR.csv")) 
+phn_based_corpus_1phn_en <- readr::read_csv(paste0(file_path, "posterior_entwv_corpus-phone-1ph_en.csv"))
+
+phone_labelsFR <- read.table("/Users/njurov/Documents/Diderot/Memoire_M2/abx_test_strut/model/supervised/posterior_grams/ints/phone_orderFR.txt", stringsAsFactors=FALSE)[[1]]
+```
+
+
+
+
+POSTERIOR GRAMS PLOT
+
+
+```{r}
+pg_plot <- function(PG_FILE,
+                    TITLE_W_DESCRIPTION,
+                    phoneme_labels) {
+
+names(PG_FILE)[names(PG_FILE) != "times"] <- phoneme_labels
+dt <- melt(PG_FILE, id.vars = "times", measure.vars = colnames(PG_FILE))
+dt <- dt %>%
+      dplyr::filter(!stringr::str_detect(value, 'time_'))
+dt$value<-as.numeric(dt$value) 
+#dt$variable<-as.numeric(dt$variable) 
+
+time_size <- length(dt$times)
+
+dt_plot <- dt %>% 
+    ggplot2::ggplot(ggplot2::aes(times, variable)) +
+    ggplot2::geom_tile(ggplot2::aes(fill = value), colour = "white") +
+    ggplot2::scale_fill_gradient2(low = "gray96", mid = "bisque", high = "paleturquoise3", midpoint = 0.5) +
+    ggplot2::theme(panel.grid.major.x = ggplot2::element_blank(),
+                panel.grid.minor.x = ggplot2::element_blank(),
+                panel.grid.major.y = ggplot2::element_blank(),
+                panel.grid.minor.y = ggplot2::element_blank(),
+                panel.background = ggplot2::element_rect(fill = "black"),
+                axis.text.x = ggplot2::element_text(angle = 45, hjust = 1, vjust = 1, size = 8),
+                plot.title = ggplot2::element_text(size = 20, face = "bold"),
+                axis.text.y = ggplot2::element_text(size = 10, face = "bold")) +
+    ggplot2::ggtitle(TITLE_W_DESCRIPTION) +
+    ggplot2::theme(legend.title = ggplot2::element_text(size = 14)) +
+    ggplot2::scale_x_discrete(name = "Time frames - 25ms wide overlapping windows every 10ms", 
+                              labels=rep("", time_size)) + #seq(1, time_size)) +
+    ggplot2::scale_y_discrete(name = "Phonemes") +
+    ggplot2::labs(fill = "Probability")       
+
+return(dt_plot)
+}
+```
+
+
+"PG - 3gr word level LM -Jul- EN - vero_full_en.wav 396.341 397.948"
+
+```{r}
+jul_wrd <- pg_plot(post_jul_wrd, "Utt: 6519-69412-0021, Word level 3gr LM (Jul) English Corpus - Test")
+# the judge her and suddenly thoughtful wrapped with his finger tips on the table and he had not yet presumed to show his visitor out i should like to ask the question he finally observed motion in the other two receipt himself 
+# %WER 100.73
+jul_phn <- pg_plot(post_jul_phn, "Utt: 6519-69412-0021, Phone level 1gr LM English Corpus - Test")
+# N B DH T AE IY ER CH S V W F IY T V G B Z D AH AE AH HH ER IY D AH EH L HH AH R EH S AY AA R HH N W P L OW TH AH AE NG N V AA AH B ER T SH ER N W EY AA ER AE T AW L P D W CH M AE AH AE W ER W N ER NG 
+#%WER 186.71
+
+# ORIG:
+# THE JUDGE GROWN SUDDENLY THOUGHTFUL RAPPED WITH HIS FINGER TIPS ON THE TABLE EDGE HE HAD NOT YET RISEN TO SHOW HIS VISITOR OUT I SHOULD LIKE TO ASK A QUESTION HE FINALLY OBSERVED MOTIONING THE OTHER TO RE SEAT HIMSELF
+
+jul_wrd
+jul_phn
+```
+
+```{r}
+phone_labels <- sort(read.table("/Users/njurov/Documents/Diderot/Memoire_M2/abx_test_strut/model/supervised/posterior_grams/entwav/phones_entwv_corpus-phone-1ph_en.txt",
+                           stringsAsFactors = FALSE)[[1]][-1])
+phn_based_en <- pg_plot(phn_based_corpus_1phn_en, "Utt: vero_full_en.wav 396.341-397.948, Phone level 1gr LM (phone based corpus for LM), Entire wavs", phone_labels)
+
+phn_based_en
+
+phone_labels2 <- sort(read.table("/Users/njurov/Documents/Diderot/Memoire_M2/abx_test_strut/model/supervised/posterior_grams/entwav/phones_entwav_wordLM_5gr_en.txt",
+                           stringsAsFactors = FALSE)[[1]][-1])
+
+wrd_based_en <- pg_plot(post_word_en, "Utt: vero_full_en.wav 396.341-397.948, Word level 1gr LM , Entire wavs", phone_labels2)
+
+wrd_based_en
+
+
+phone_labels_ipa <- c("ɑː","æ","ʌ","ɔː","aʊ","aɪ","b","ʧ","d","ð","ɛ","ɝ","eɪ","f","g","h","ɪ","iː","ʤ","k","l","m","n","ŋ","NSN","oʊ","ɔɪ","p","r","s","ʃ","SIL", "SPN", "t","θ","ʊ","uː","v","w","j","z","ʒ")
+phn_based_en2 <- pg_plot(phn_based_corpus_1phn_en, "Utterance as a posterior gram — example", phone_labels_ipa)
+phn_based_en2
+
+```
+
+
+```{r}
+
+fr1 <- pg_plot(FR1, "triplet002_01: saf / fup", phone_labelsFR)
+fr2 <- pg_plot(FR2, "triplet002_02: saef / vup", phone_labelsFR)
+fr3 <- pg_plot(FR3, "triplet002_03: saef / vup", phone_labelsFR)
+
+fr1
+fr2
+fr3
+```
+```{r}
+
+
+en3 <- pg_plot(EN3, "triplet002_03: saef / saef", phone_labelsEN)
+
+en <-pg_plot(EN, "spk01_triplet009_02_EN", phone_labelsEN)
+en
+
+
+fr <- pg_plot(FR, "spk01_triplet009_02_FR", phone_labelsFR)
+fr
+```
+

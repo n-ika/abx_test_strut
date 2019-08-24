@@ -1,0 +1,212 @@
+---
+title: "DPGMM vs K-means"
+output: html_document
+---
+
+```{r include=FALSE}
+library(magrittr)
+library("doParallel")
+correct_ipa <- function(data){
+  data <- data %>%
+  dplyr::mutate(vowel_eng = 
+                  ifelse(vowel_eng == "AE", "æ",
+                  ifelse(vowel_eng == "UH", "ʊ",
+                  ifelse(vowel_eng == "AH", "ʌ", 
+                  ifelse(vowel_eng == "IH", "ɪ", vowel_eng)))),
+                vowel_fr =
+                  ifelse(vowel_fr == "A", "a",
+                  ifelse(vowel_fr == "E", "ɛ", 
+                  ifelse(vowel_fr == "OE", "œ",
+                  ifelse(vowel_fr == "O", "ɔ",
+                  ifelse(vowel_fr == "Y", "y",
+                  ifelse(vowel_fr == "U", "u",
+                  ifelse(vowel_fr == "I", "i", vowel_fr)))))))
+                  )
+  return(data)
+}
+correct_ipa_context <- function(data){
+  data <- data %>%
+  dplyr::mutate(context = 
+                  ifelse(context == "V_Z", "v_z",
+                  ifelse(context == "V_K", "v_k",
+                  ifelse(context == "SH_S", "ʃ_s", 
+                  ifelse(context == "Z_G", "z_g", 
+                  ifelse(context == "V_P", "v_p", 
+                  ifelse(context == "Z_D", "z_d",
+                  ifelse(context == "Z_B", "z_b",
+                  ifelse(context == "SH_B", "ʃ_b", 
+                  ifelse(context == "V_SH", "v_ʃ",
+                  ifelse(context == "Z_SH", "z_ʃ",
+                  ifelse(context == "SH_V", "ʃ_v",       
+                  ifelse(context == "V_F", "v_f", tolower(context))))))))))))))
+  return(data)
+}
+emd_theme <- function(text_size=18) {
+  return(ggplot2::theme_bw() +
+           ggplot2::theme(text=ggplot2::element_text(size=text_size),
+                          legend.position="bottom"))
+}
+
+
+cbPalette <- c("#E69F00", "#009E73", "#CC79A7")
+
+```
+
+```{r load-data, include=FALSE}
+distances_eng_dpgmm <- readr::read_csv("model/unsupervised/English_1501_vtln_kl_div_final.csv") %>%
+                       dplyr::rename(distance_eng_dpgmm_TGT=distance_TGT,
+                                     distance_eng_dpgmm_OTH=distance_OTH)
+distances_fr_dpgmm <- readr::read_csv("model/unsupervised/French_1501_vtln_kl_div_final.csv") %>%
+                       dplyr::rename(distance_fr_dpgmm_TGT=distance_TGT,
+                                     distance_fr_dpgmm_OTH=distance_OTH)
+distances_kmean <- readr::read_csv("model/unsupervised/pqKmeans/1M_PQkmean_clustering/distances_kmeans.csv") 
+
+distances_all <- distances_kmean %>%
+                dplyr::left_join(distances_eng_dpgmm) %>%
+                dplyr::left_join(distances_fr_dpgmm) %>%
+                dplyr::mutate(delta_kmean1565fr=fr_1565_kmean_oth_x-fr_1565_kmean_tgt_x,
+                              delta_kmean611en=en_611_kmean_oth_x-en_611_kmean_tgt_x,
+                              delta_en_dpgmm=distance_eng_dpgmm_OTH-distance_eng_dpgmm_TGT,
+                              delta_fr_dpgmm=distance_fr_dpgmm_OTH-distance_fr_dpgmm_TGT
+                              ) %>%
+                correct_ipa %>% correct_ipa_context
+```
+
+```{r}
+distances_triplet_fr <- distances_all %>%
+              dplyr::select(delta_kmean1565fr,
+                            delta_fr_dpgmm,
+                            tripletid)
+
+distances_triplet_en <- distances_all %>%
+              dplyr::select(delta_kmean611en,
+                            delta_en_dpgmm,
+                            tripletid)
+
+distances_en_dp_V <- distances_all %>%
+              dplyr::select(delta_en_dpgmm,
+                            vowel_fr,
+                            vowel_eng) %>%
+              dplyr::group_by(vowel_fr, vowel_eng) %>%
+              dplyr::summarize(`Mean vowel pair distance DPGMM`=
+                                 mean(delta_en_dpgmm)) %>%
+              dplyr::ungroup() 
+
+distances_en_k_V <- distances_all %>%
+              dplyr::select(delta_kmean611en,
+                            vowel_fr,
+                            vowel_eng) %>%
+              dplyr::group_by(vowel_fr, vowel_eng) %>%
+              dplyr::summarize(`Mean vowel pair distance K-Means`=
+                                 mean(delta_kmean611en)) %>%
+              dplyr::ungroup()
+
+distances_fr_dp_V <- distances_all %>%
+              dplyr::select(delta_fr_dpgmm,
+                            vowel_fr,
+                            vowel_eng) %>%
+              dplyr::group_by(vowel_fr, vowel_eng) %>%
+              dplyr::summarize(`Mean vowel pair distance DPGMM`=
+                                 mean(delta_fr_dpgmm)) %>%
+              dplyr::ungroup() 
+
+distances_fr_k_V <- distances_all %>%
+              dplyr::select(delta_kmean1565fr,
+                            vowel_fr,
+                            vowel_eng) %>%
+              dplyr::group_by(vowel_fr, vowel_eng) %>%
+              dplyr::summarize(`Mean vowel pair distance K-Means`=
+                                 mean(delta_kmean1565fr)) %>%
+              dplyr::ungroup()
+
+vowel_distances_en <- distances_en_dp_V %>%
+              dplyr::left_join(distances_en_k_V)
+vowel_distances_fr <- distances_fr_dp_V %>%
+              dplyr::left_join(distances_fr_k_V)
+
+
+distances_en_dp_C <- distances_all %>%
+              dplyr::select(delta_en_dpgmm,
+                            context) %>%
+              dplyr::group_by(context) %>%
+              dplyr::summarize(`Mean context distance DPGMM`=
+                                 mean(delta_en_dpgmm)) %>%
+              dplyr::ungroup() 
+
+distances_en_k_C <- distances_all %>%
+              dplyr::select(delta_kmean611en,
+                            context) %>%
+              dplyr::group_by(context) %>%
+              dplyr::summarize(`Mean context distance K-Means`=
+                                 mean(delta_kmean611en)) %>%
+              dplyr::ungroup()
+
+distances_fr_dp_C <- distances_all %>%
+              dplyr::select(delta_fr_dpgmm,
+                            context) %>%
+              dplyr::group_by(context) %>%
+              dplyr::summarize(`Mean context distance DPGMM`=
+                                 mean(delta_fr_dpgmm)) %>%
+              dplyr::ungroup() 
+
+distances_fr_k_C <- distances_all %>%
+              dplyr::select(delta_kmean1565fr,
+                            context) %>%
+              dplyr::group_by(context) %>%
+              dplyr::summarize(`Mean context distance K-Means`=
+                                 mean(delta_kmean1565fr)) %>%
+              dplyr::ungroup()
+
+
+
+consonant_distances_en <- distances_en_dp_C %>%
+              dplyr::left_join(distances_en_k_C)
+
+consonant_distances_fr <- distances_fr_dp_C %>%
+              dplyr::left_join(distances_fr_k_C)
+```
+
+
+```{r plot-dist-tgt}
+ggplot2::ggplot(vowel_distances_en,
+                ggplot2::aes(x=`Mean vowel pair distance K-Means`,
+                             y=`Mean vowel pair distance DPGMM`,
+                             label=paste0(vowel_eng, ":", vowel_fr))) +
+  ggplot2::geom_smooth(method="lm",  fullrange=TRUE, se=TRUE, lty="dashed",
+                       lwd=0.6,  colour="#aaaaaa") +
+  ggplot2::geom_point() +
+  emd_theme() +
+  ggrepel::geom_text_repel(family="Times New Roman", size=4.9) +
+  ggplot2::theme(legend.position = "bottom",
+                 text=ggplot2::element_text(size=17.5, family="Times New Roman"),
+                 axis.text=ggplot2::element_text(size=15, family="Times New Roman"),
+                 legend.text=ggplot2::element_text(size=10, family="Times New Roman"),
+                 legend.key.width=ggplot2::unit(1.75, "cm")) +
+  ggplot2::labs(x="Distances by vowel pair (k-means k=1565) - English",
+                 y="Distances by vowel pair (DPGMM) - English") +
+  #ggplot2::scale_x_continuous(expand=c(0,0), limits=c(-0.065, 0.065)) +
+  #ggplot2::coord_cartesian(xlim=c(-0.065, 0.065), ylim=c(-0.45, 0.35)) +
+  ggplot2::ggsave("figures/Figure_Dist_DPGMM_K_en_vowel.png", width=10, height=6)
+```
+
+```{r plot-dist-tgt}
+ggplot2::ggplot(consonant_distances_fr,
+                ggplot2::aes(x=`Mean context distance K-Means`,
+                             y=`Mean context distance DPGMM`,
+                             label=context)) +
+  ggplot2::geom_smooth(method="lm",  fullrange=TRUE, se=TRUE, lty="dashed",
+                       lwd=0.6,  colour="#aaaaaa") +
+  ggplot2::geom_point() +
+  emd_theme() +
+  ggrepel::geom_text_repel(family="Times New Roman", size=4.9) +
+  ggplot2::theme(legend.position = "bottom",
+                 text=ggplot2::element_text(size=17.5, family="Times New Roman"),
+                 axis.text=ggplot2::element_text(size=15, family="Times New Roman"),
+                 legend.text=ggplot2::element_text(size=10, family="Times New Roman"),
+                 legend.key.width=ggplot2::unit(1.75, "cm")) +
+  ggplot2::labs(x="Distances by context (k-means k=1565) - French",
+                 y="Distances by context (DPGMM) - French") +
+  #ggplot2::scale_x_continuous(expand=c(0,0), limits=c(-0.065, 0.065)) +
+  #ggplot2::coord_cartesian(xlim=c(-0.065, 0.065), ylim=c(-0.45, 0.35)) +
+  ggplot2::ggsave("figures/Figure_Dist_DPGMM_K_fr_context.png", width=7, height=4)
+```

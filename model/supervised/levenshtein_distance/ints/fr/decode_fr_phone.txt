@@ -1,0 +1,336 @@
+spk01_triplet003_02 ə 
+spk01_triplet006_01 ɛ k 
+spk01_triplet008_01 v ɑ̃ e 
+spk01_triplet009_02 v ɑ̃ d 
+spk01_triplet010_01 ʃ ɔ 
+spk01_triplet011_02 ɛ ʃ 
+spk01_triplet014_01 ə 
+spk01_triplet015_02 v a- 
+spk01_triplet016_01 ɛ k 
+spk01_triplet017_02 s a ʃ 
+spk01_triplet018_01 p 
+spk01_triplet021_02 ʃ a s 
+spk01_triplet022_01 v a ʃ 
+spk01_triplet024_01 v a- 
+spk01_triplet026_01 v ɛ d 
+spk01_triplet028_01 p 
+spk01_triplet030_01 v a d 
+spk01_triplet032_01 v a ʃ 
+spk01_triplet033_02 v ɛ ɡ 
+spk01_triplet034_01 v a- 
+spk01_triplet043_02 v ɛ ɡ 
+spk01_triplet044_01 p 
+spk01_triplet045_02 v ɔ d 
+spk01_triplet047_02 s a- 
+spk01_triplet048_01 v a- 
+spk01_triplet049_02 v a s 
+spk01_triplet050_01 v a s 
+spk01_triplet053_02 ə 
+spk01_triplet054_01 v a- 
+spk01_triplet055_02 v a 
+spk01_triplet056_01 d 
+spk01_triplet059_02 d a- 
+spk01_triplet060_01 v a d 
+spk01_triplet061_02 ʃ œ 
+spk01_triplet066_01 s ɔ d 
+spk01_triplet067_02 v ɑ̃ d 
+spk01_triplet070_01 a- 
+spk01_triplet072_01 t 
+spk01_triplet073_02 v ɑ̃ v 
+spk01_triplet075_02 ʃ ɑ̃ d 
+spk01_triplet076_01 ʃ a- 
+spk01_triplet077_02 ə 
+spk01_triplet081_02 d ɛ l 
+spk01_triplet082_01 v a- 
+spk01_triplet085_02 v a ʃ 
+spk01_triplet087_02 v a e 
+spk01_triplet090_01 v a- 
+spk01_triplet091_02 v a- 
+spk01_triplet092_01 v a d 
+spk01_triplet096_01 v a ʃ 
+spk01_triplet097_02 v a- 
+spk01_triplet098_01 ə 
+spk01_triplet099_02 v a- 
+spk01_triplet103_02 ɛ ɡ 
+spk01_triplet104_01 ə 
+spk01_triplet105_02 v ɛ d 
+spk01_triplet107_02 v ɑ̃ a ʃ 
+spk01_triplet109_02 v a ʃ 
+spk01_triplet111_02 t 
+spk02_triplet001_01 
+spk02_triplet002_02 t 
+spk02_triplet004_02 
+spk02_triplet005_01 
+spk02_triplet007_01 t 
+spk02_triplet012_02 
+spk02_triplet013_01 
+spk02_triplet019_01 p 
+spk02_triplet020_02 
+spk02_triplet023_01 
+spk02_triplet025_01 t 
+spk02_triplet027_01 t 
+spk02_triplet029_01 
+spk02_triplet031_01 l 
+spk02_triplet035_01 
+spk02_triplet036_02 t 
+spk02_triplet037_01 t 
+spk02_triplet038_02 
+spk02_triplet039_01 
+spk02_triplet040_02 ʁ 
+spk02_triplet041_01 t 
+spk02_triplet042_02 t 
+spk02_triplet046_02 p 
+spk02_triplet051_01 t 
+spk02_triplet052_02 t 
+spk02_triplet057_01 
+spk02_triplet058_02 
+spk02_triplet062_02 t 
+spk02_triplet063_01 p 
+spk02_triplet064_02 
+spk02_triplet065_01 
+spk02_triplet068_02 
+spk02_triplet069_01 t 
+spk02_triplet071_01 t 
+spk02_triplet074_02 
+spk02_triplet078_02 p 
+spk02_triplet079_01 
+spk02_triplet080_02 
+spk02_triplet083_01 
+spk02_triplet084_02 p 
+spk02_triplet086_02 
+spk02_triplet088_02 p 
+spk02_triplet089_01 p 
+spk02_triplet093_01 t 
+spk02_triplet094_02 
+spk02_triplet095_01 t 
+spk02_triplet100_02 ʁ 
+spk02_triplet101_01 t 
+spk02_triplet102_02 
+spk02_triplet106_02 
+spk02_triplet108_02 t 
+spk02_triplet110_02 ə 
+spk02_triplet112_02 
+spk03_triplet001_02 p 
+spk03_triplet002_01 b a d 
+spk03_triplet004_01 e f s 
+spk03_triplet005_02 
+spk03_triplet007_02 a- 
+spk03_triplet012_01 s a 
+spk03_triplet013_02 a- 
+spk03_triplet019_02 
+spk03_triplet020_01 y a m 
+spk03_triplet023_02 y a d 
+spk03_triplet025_02 
+spk03_triplet027_02 v a d 
+spk03_triplet029_02 a t 
+spk03_triplet031_02 y a- 
+spk03_triplet035_02 
+spk03_triplet036_01 
+spk03_triplet037_02 ʁ a d 
+spk03_triplet038_01 y a d 
+spk03_triplet039_02 v a d 
+spk03_triplet040_01 y a 
+spk03_triplet041_02 b a e 
+spk03_triplet042_01 
+spk03_triplet046_01 y a 
+spk03_triplet051_02 y a 
+spk03_triplet052_01 
+spk03_triplet057_02 y a d 
+spk03_triplet058_01 v a d 
+spk03_triplet062_01 b a e 
+spk03_triplet063_02 p 
+spk03_triplet064_01 
+spk03_triplet065_02 y a 
+spk03_triplet068_01 y a f 
+spk03_triplet069_02 y a f 
+spk03_triplet071_02 a t 
+spk03_triplet074_01 b a d 
+spk03_triplet078_01 
+spk03_triplet079_02 s ə 
+spk03_triplet080_01 
+spk03_triplet083_02 b a n 
+spk03_triplet084_01 b a d 
+spk03_triplet086_01 v a d 
+spk03_triplet088_01 
+spk03_triplet089_02 ʁ a d 
+spk03_triplet093_02 
+spk03_triplet094_01 d 
+spk03_triplet095_02 e f s 
+spk03_triplet100_01 
+spk03_triplet101_02 y a- 
+spk03_triplet102_01 
+spk03_triplet106_01 
+spk03_triplet108_01 b a d 
+spk03_triplet110_01 s s 
+spk03_triplet112_01 b a f 
+spk04_triplet003_01 ʒ a ɛ ɛ 
+spk04_triplet006_02 v a t 
+spk04_triplet008_02 d a e- 
+spk04_triplet009_01 p 
+spk04_triplet010_02 ɛ ʃ a l 
+spk04_triplet011_01 d ʒ 
+spk04_triplet014_02 l u d 
+spk04_triplet015_01 v a d 
+spk04_triplet016_02 i 
+spk04_triplet017_01 ʁ ʒ 
+spk04_triplet018_02 v a ɛ 
+spk04_triplet021_01 ʒ i i 
+spk04_triplet022_02 v a ʃ ɛ 
+spk04_triplet024_02 ɡ 
+spk04_triplet026_02 n ɔ b 
+spk04_triplet028_02 v a ɛ 
+spk04_triplet030_02 ɛ a d ɛ 
+spk04_triplet032_02 ə 
+spk04_triplet033_01 v a i 
+spk04_triplet034_02 v a l 
+spk04_triplet043_01 d 
+spk04_triplet044_02 i ɛ 
+spk04_triplet045_01 o i 
+spk04_triplet047_01 i 
+spk04_triplet048_02 v a ɛ 
+spk04_triplet049_01 ɛ 
+spk04_triplet050_02 v a- 
+spk04_triplet053_01 ɛ 
+spk04_triplet054_02 v e- 
+spk04_triplet055_01 ʁ 
+spk04_triplet056_02 ə 
+spk04_triplet059_01 v a d 
+spk04_triplet060_02 v y b ɛ 
+spk04_triplet061_01 ə 
+spk04_triplet066_02 ɡ 
+spk04_triplet067_01 ɛ 
+spk04_triplet070_02 ɛ 
+spk04_triplet072_02 ə 
+spk04_triplet073_01 b a ɛ 
+spk04_triplet075_01 ʒ a d 
+spk04_triplet076_02 ʒ a d 
+spk04_triplet077_01 v e- 
+spk04_triplet081_01 d a d 
+spk04_triplet082_02 v a ɛ 
+spk04_triplet085_01 ʒ 
+spk04_triplet087_01 l y 
+spk04_triplet090_02 v a ɛ 
+spk04_triplet091_01 e y 
+spk04_triplet092_02 v a d 
+spk04_triplet096_02 ʁ 
+spk04_triplet097_01 v a b ɛ 
+spk04_triplet098_02 i i 
+spk04_triplet099_01 ɛ i d 
+spk04_triplet103_01 t 
+spk04_triplet104_02 l o l 
+spk04_triplet105_01 v a d 
+spk04_triplet107_01 v a ʒ 
+spk04_triplet109_01 v a s 
+spk04_triplet111_01 ə 
+spk05_triplet002_03 ə 
+spk05_triplet004_03 ʒ 
+spk05_triplet006_03 t 
+spk05_triplet010_03 ʁ 
+spk05_triplet014_03 ʁ 
+spk05_triplet016_03 p 
+spk05_triplet024_03 t 
+spk05_triplet026_03 p 
+spk05_triplet028_03 t 
+spk05_triplet034_03 p 
+spk05_triplet040_03 t 
+spk05_triplet042_03 t 
+spk05_triplet044_03 ʁ 
+spk05_triplet048_03 p 
+spk05_triplet052_03 ə 
+spk05_triplet060_03 ə 
+spk05_triplet062_03 ə 
+spk05_triplet070_03 p 
+spk05_triplet072_03 t 
+spk05_triplet074_03 t 
+spk05_triplet078_03 t 
+spk05_triplet084_03 t 
+spk05_triplet088_03 p 
+spk05_triplet096_03 ʒ 
+spk05_triplet106_03 ɛ 
+spk05_triplet108_03 ʁ 
+spk05_triplet110_03 ə 
+spk05_triplet112_03 p 
+spk06_triplet008_03 
+spk06_triplet012_03 
+spk06_triplet018_03 <unk> 
+spk06_triplet020_03 t 
+spk06_triplet022_03 t 
+spk06_triplet030_03 
+spk06_triplet032_03 
+spk06_triplet036_03 <unk> 
+spk06_triplet038_03 l 
+spk06_triplet046_03 t 
+spk06_triplet050_03 <unk> 
+spk06_triplet054_03 p 
+spk06_triplet056_03 
+spk06_triplet058_03 
+spk06_triplet064_03 t 
+spk06_triplet066_03 
+spk06_triplet068_03 
+spk06_triplet076_03 
+spk06_triplet080_03 
+spk06_triplet082_03 t 
+spk06_triplet086_03 
+spk06_triplet090_03 <unk> 
+spk06_triplet092_03 
+spk06_triplet094_03 p 
+spk06_triplet098_03 <unk> 
+spk06_triplet100_03 
+spk06_triplet102_03 
+spk06_triplet104_03 p 
+spk07_triplet001_03 
+spk07_triplet003_03 ʃ s 
+spk07_triplet007_03 s a- 
+spk07_triplet009_03 v ɔ d 
+spk07_triplet011_03 
+spk07_triplet013_03 
+spk07_triplet017_03 ɛ 
+spk07_triplet019_03 
+spk07_triplet021_03 j a s 
+spk07_triplet023_03 
+spk07_triplet025_03 e- 
+spk07_triplet031_03 
+spk07_triplet035_03 
+spk07_triplet043_03 d d 
+spk07_triplet045_03 v ɔ d 
+spk07_triplet047_03 
+spk07_triplet055_03 v ɔ ɡ 
+spk07_triplet059_03 v a d 
+spk07_triplet061_03 
+spk07_triplet063_03 
+spk07_triplet065_03 a- 
+spk07_triplet071_03 v a 
+spk07_triplet077_03 ə 
+spk07_triplet083_03 v ɑ̃ d 
+spk07_triplet085_03 ə a ʒ 
+spk07_triplet087_03 v ɔ z 
+spk07_triplet089_03 v ɔ ɛ 
+spk07_triplet093_03 ɛ 
+spk07_triplet097_03 v a- 
+spk07_triplet105_03 
+spk08_triplet005_03 i i 
+spk08_triplet015_03 ɛ a d 
+spk08_triplet027_03 ə 
+spk08_triplet029_03 a- 
+spk08_triplet033_03 l i 
+spk08_triplet037_03 
+spk08_triplet039_03 
+spk08_triplet041_03 l a e 
+spk08_triplet049_03 
+spk08_triplet051_03 ɛ a- 
+spk08_triplet053_03 
+spk08_triplet057_03 z a d 
+spk08_triplet067_03 e- 
+spk08_triplet069_03 e- a s 
+spk08_triplet073_03 ɛ 
+spk08_triplet075_03 ə 
+spk08_triplet079_03 ʃ ə 
+spk08_triplet081_03 
+spk08_triplet091_03 ɛ a 
+spk08_triplet095_03 ʃ 
+spk08_triplet099_03 ɛ a 
+spk08_triplet101_03 ə 
+spk08_triplet103_03 a e ɡ 
+spk08_triplet107_03 
+spk08_triplet109_03 e- a ʒ 
+spk08_triplet111_03 

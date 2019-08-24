@@ -1,0 +1,10 @@
+LM, LEVEL, ORDER, WER, CER, DECODED_NAME
+flatlm_phone_entwv1_fr, phone, 1, 258.21, 1.4101445663, 01flat_decode_entwv_phone_fr
+flatlm_jul_fr, word, 3, 98.93, , decode_entwv_julien_fr_flat
+lm_word_int1_fr, word, 1, 201.19, 2.32738095238, 01_decode_word_phok_int_fr
+lm_word_entwv5_fr, word, 5, 98.29, 1.25049850449, 05_decode_word_phok_entwv_fr
+lm_phone_entwv1_fr, phone, 1, 175.75, 1.14664340312, decode_1ph_entwv_fr
+lm_julien_fr, word, 3, 89.81, , decode_entwv_julien_fr
+lm_word_int5_fr, word, 5, 194.05, 2.27579365079, 05_decode_word_phok_int_fr
+lm_jul_ph_fr, phone, 1, 149.64, 1.39091060153, 01_decode_entwv_jul-ph_fr
+lm_jul_ph_flat_fr, phone, 1, 252.93, 1.48342472582, 01_decode_entwv_jul-ph_flat_fr

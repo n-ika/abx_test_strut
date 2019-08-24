@@ -1,0 +1,820 @@
+=============
+polluted
+=============
+
+polluted
+
+=============
+cold
+=============
+
+cold
+
+=============
+not_drinkable
+=============
+
+not drinkable
+
+------------------------------
+lmeds_interface
+------------------------------
+
+====================
+loading_progress
+====================
+
+Loading.  Please wait.
+
+====================
+metadata_description
+====================
+
+A demonstration of the kinds of pages that can be presented to subjects via LMEDS.
+
+====================
+progress
+====================
+
+Progression
+
+------------------------------
+text_page
+------------------------------
+
+====================
+audio_list_instructions
+====================
+
+On the next page you'll listen to a list of audio files separated by a brief pause.
+
+====================
+boundary_and_prominence_alternatives
+====================
+
+Although LMEDS was originally developed for collecting RPT annotations such as in the previous pages, there are other ways that one can use LMEDS to collect prosody annotations, as shown with the next two pages.
+
+====================
+boundary_and_prominence_constrained_instructions
+====================
+
+On the next page you'll perform a similar annotation task as before.  This time however, you will listen to the audio exactly twice before moving on.  Also, you will not be able to see the boundary markings you make during the first half of the task.
+
+====================
+boundary_and_prominence_mechanics_instructions
+====================
+
+<p style="text-align:center;font-weight: bold; text-decoration: underline;">
+Experimental Procedure
+</p>
+
+You will be annotating excerpts of recorded conversations.  Each page contains the transcript for the excerpt and may also contain the audio recording.  For each excerpt, you will complete two tasks.  First you will break the text into smaller sequences of words.  Second, you will mark certain words.<br /><br />
+
+In the first task, based on some criteria (see next page) you will select a word and a vertical bar will be appear after that word:<br /><br />
+word word <b>word</b> | word word ...<br /><br /> 
+
+If you change your mind after selecting a word, just select it again and the bar will disappear. In each utterance, you will be able to select as many words that match the necessary criteria. When you have finished, click 'submit'. This will transition you to the next task. <br /><br />
+
+In the <b>second task</b> you will again select words (based on different criteria—see next page), however, this time, once you select a word its color will change to red:<br /><br />
+word word <font color="red">word</font> word ...<br /><br />
+
+If you change your mind, just select the word again and it will revert back to black.   During this phase, you will see where you marked the boundaries from the earlier task. When you are finished click <b>submit</b> to move on to the next excerpt.
+
+====================
+boundary_and_prominence_nonspecific_instructions
+====================
+
+As instructed previously, for each audio file, you will conduct two tasks. <br /><br />
+
+In normal speech, speakers group words in a way that helps listeners interpret the utterance. <br /><br />
+
+In the <b>first task</b>, break the text into chunks that reflect this grouping. <br /><br />
+
+In normal speech, speakers pronounce some word or words in a sentence with more prominence than others. The prominent words are in a sense highlighted for the listener, and stand out from other non-prominent words.  <br /><br />
+
+In the <b>second task</b>, mark words that you hear as prominent in this way. <br /><br />
+
+There are <b>sixteen audio excerpts</b>.  Please use the second playback to review your work.  You will <b>not</b> be able to listen to the audio more than twice.
+
+====================
+boundary_and_prominence_randomized_instructions
+====================
+
+On the next few pages are randomized boundary and prominence pages.
+<br /><br />
+Mark the boundaries you hear based on pauses in the speech (there aren't
+really any pauses in these short recordings though) and mark the prominences
+based on the words you think stand out.
+
+====================
+boundary_and_prominence_with_limits
+====================
+
+The next few pages contain more prominence and boundary pages.  However,
+on these pages, you'll be limited in the number of items you can select.
+Specific instructions will be given for each page.
+
+====================
+fill_in_the_blank_instructions
+====================
+
+On the next page, please select the word that appears in the audio given.
+<br /><br />
+In LMEDS, it is possible to set a timer.  If the timer expires, the item is
+automatically marked as incomplete and LMEDS progresses to the next page.
+<b>The next page has a 10 second timer</b>.
+
+====================
+prot_first_page
+====================
+
+Welcome to the Geomphon experiment.  The stimuli items are all audio files, please check to quality of your internet connexion before starting the experiment.  <br /><br />
+
+After short audio test, made to make sure the audio files will play correctly during the experiment, a consent form and a quick survey, you will be able to start the experiment, after which the mtuck code will be released.<br /><br />
+
+This experiment should only take about XXX minutes to complete.
+
+====================
+keyboard_shortcuts
+====================
+
+On the next page there is a boundary and prominence page followed by 
+a media choice page, as you have seen before.  However,
+these pages have been configured to allow interaction via a keyboard.
+Specific instructions will be given for each page.
+
+====================
+multingual_support
+====================
+
+Before continuing, note that LMEDS is multilingual. (translations provided by google translate).<br /><br />
+続行する前に、LMEDS推定は、多言語であることに注意<br /><br />
+Avant de continuer, notez que LMEDS est multilingue<br /><br />
+जारी रखने से पहले, LMEDS बहुभाषी है कि ध्यान दें<br /><br />
+
+====================
+prot_post_survey_instructions
+====================
+
+La page suivante présente un court questionnaire, pour nous aider à améliorer l'expérience.
+
+====================
+presurvey_instructions
+====================
+
+On the next page you'll fill out a demographics page.  These questions are derived
+from actual demographics surveys conducted over LMEDS.<br /><br />
+
+Note that you may skip as many items as you want.
+
+====================
+randomized_demo_introduction
+====================
+
+This is a short LMEDS sample experiment meant to demonstrate the randomization feature.
+<br /><br />
+Please read the user manual for more information about how to randomize the presentation
+order of stimuli to users.
+
+====================
+prot_remote_experiment_notice
+====================
+
+Before you begin the following experiment, please take note of the following points.
+<br /><br />
+
+<b>1)</b> Please <b>read all instructions</b> that appear throughout this experiment carefully.  Do not skip or skim instructions.<br /><br />
+
+<b>2)</b> Please <b>wear headphones or earbuds</b> when listening to audio files.
+<br /><br />
+
+<b>3)</b> <b>You should be in a quiet room</b>, free from distraction for the duration of the experiment.  If there is significant background noise, such as in a cafe or other public area, you may have trouble listening to audio files and concentrating on the experiment.
+<br /><br />
+
+<b>4)</b> Please <b>silence or turn off your cell-phone</b> and other noise-making electronics.
+<br /><br />
+
+<b>5)</b> Please <b>close all other browser windows or tabs</b>--particularly those that issue auditory or visual alerts or status updates such as email providers or social networking websites.
+<br /><br />
+
+<b>6)</b> Please <b>do not perform other tasks</b> while you are doing the experiment.
+<br /><br />
+
+<br />
+
+By clicking 'submit' you acknowledge that you will follow these to the best of your ability.
+
+====================
+prot_instructions
+====================
+
+On the next page, you will hear an audio file.  Please press the appropriate button
+to indicate which of the two options presented corresponds, according to you, the best to what you have just heard.
+
+====================
+same_different_randomized_instructions
+====================
+
+On the next few pages are a few same-different questions.  The order of the test items is randomized.
+
+====================
+sliders_in_surveys
+====================
+
+Sliders can also be used in surveys.
+
+====================
+prot_speed_warning
+====================
+
+Your browser must be up-to-date and your internet speed must be fast to complete
+this task, which involves listening to large audio files.<br /><br />
+
+If you are on an old computer or have a slow internet connection, please release this
+HIT.
+
+====================
+video_ok
+====================
+
+LMEDS can also play use video.  Any pages shown with audio files can have the audio replaced with video, as demonstrated next.
+
+====================
+whats_new_in_2.3
+====================
+
+LMEDS 2.3 has several new features.  Showcased here are the new kinds of pages that can be crafted in LMEDS 2.3.
+These pages are included in the full demo, but for those just wanting to see the new stuff, this demo is for you.<br /><br />
+
+New Features<br /><br />
+
+<ul>
+<li>Video now supported with the same controls and functionality as audio</li>
+<li>Sliding scales are now a supported widget
+<li>New syllable-marking page (branch of prominence-marking pages)
+</ul>
+
+------------------------------
+media_test
+------------------------------
+
+====================
+error_verify_media
+====================
+
+Vous devez sélectionner un réponse avant de continuer
+
+====================
+mediaTest_affirm
+====================
+
+J'entends l'audio
+
+====================
+mediaTest_reject
+====================
+
+Je n'entends pas l'audio
+
+====================
+mediaTest_text
+====================
+
+Veuillez écouter le fichier son en appuyant sur le bouton 'écouter' et indiquez si vous pouvez l'entendre ou pas.
+<br /><br />
+Si vous avez un casque ou des écouteurs, veuillez les utiliser.
+<br /><br />
+Vous pouvez également utiliser ce temps pour ajuster le volume de votre appareil.
+
+------------------------------
+consent
+------------------------------
+
+====================
+consent
+====================
+
+J'accepte
+
+====================
+consent_query
+====================
+
+Acceptez vous de participer?
+
+====================
+consent_title
+====================
+
+Formulaire de consentement
+
+====================
+prot_demo_consent
+====================
+
+<b> <font size="4">Veuillez lire ces informations attentivement avant de décider de participer ou non à cette recherche.</font> </b> <br /><br />
+
+     Nous vous invitons à participer à une étude sur la production et la compréhension des langues.
+
+   Nous vous demanderons de faire une tâche linguistique telle que lire ou écouter des phrases, des mots et des sons.
+ <br /><br />
+
+Si vous avez lu ce formulaire et avez décidé de participer à cette expérience, veuillez comprendre que votre participation est volontaire et que vous avez le droit de retirer votre consentement ou d'interrompre votre participation à tout moment.
+  <br /><br />
+
+Il n'y a aucun risque ou avantage d'aucune sorte impliqué dans cette étude. Vous serez payé pour votre participation au taux affiché.
+ <br /><br />
+
+Votre participation à cette étude restera confidentielle. La confidentialité sera maintenue dans toutes les données publiées et écrites résultant de l’étude. Vous pouvez imprimer ce formulaire pour vos archives. <br /><br />
+
+====================
+dissent
+====================
+
+Je n'accepte pas
+
+====================
+error_consent_or_dissent
+====================
+
+Pour continuer, vous devez soit accepter de participer, soit ne pas accepter de participer
+
+------------------------------
+media_list
+------------------------------
+
+====================
+memory_a
+====================
+
+A
+
+====================
+memory_b
+====================
+
+B
+
+====================
+memory_instruct
+====================
+
+Blaah
+
+------------------------------
+media_choice
+------------------------------
+
+====================
+different
+====================
+
+different
+
+====================
+neutral
+====================
+
+Neither
+
+====================
+one_play_two_response2
+====================
+
+Same or different?<br />
+Press 'p' to play the audio; 'z' for the left response and 'm' for the right response.
+
+====================
+prominence_point_instr
+====================
+
+Please mark on a five point scale, the degree of prominence carried by the word marked in bold.
+
+====================
+prominence_video_instr
+====================
+
+How prominent is the most prominent word in this list?
+
+====================
+same
+====================
+
+same
+
+====================
+same_different_instr
+====================
+
+Are the two audio files the same or different?
+
+====================
+two_play_two_response
+====================
+
+Same or different?<br />
+Press 'q' for the left audio and 'p' for the right audio.\n<br />
+Press 'z' for the left response and 'm' for the right response.
+
+====================
+vnonprom
+====================
+
+Very nonprominent
+
+====================
+vprom
+====================
+
+Very prominent
+
+------------------------------
+fill_in_the_blank
+------------------------------
+
+====================
+fill_in_the_blank_instruct
+====================
+
+Please fill in the option that correctly completes this sentence.
+
+====================
+three_option_validation
+====================
+
+Error.  Please select one of the three options.
+
+------------------------------
+boundary_and_prominence
+------------------------------
+
+====================
+keyboard_shortcuts_boundary
+====================
+
+<font color="red">Boundary task.</font>  Press [p] to play the audio file and [enter] to continue
+
+====================
+keyboard_shortcuts_prominence
+====================
+
+<font color="blue">Prominence task.</font>  Press [p] to play the audio file and [enter] to continue
+
+====================
+mark_one_boundary
+====================
+
+Mark exactly one boundary.
+
+====================
+mark_one_prominence
+====================
+
+Mark exactly one prominence.
+
+====================
+pbMinMaxSelectedErrorMsg
+====================
+
+Error.  You must select at least %d word(s) but not more than %d word(s).
+
+====================
+true
+====================
+
+
+
+------------------------------
+boundary
+------------------------------
+
+====================
+boundary_at_most_one
+====================
+
+Mark at most one boundary.
+
+------------------------------
+prominence
+------------------------------
+
+====================
+prominence_at_least_two
+====================
+
+Mark at least two prominences.
+
+------------------------------
+syllable_marking
+------------------------------
+
+====================
+nonspecific_syllables
+====================
+
+Please mark the most prominent syllable in each word.
+
+------------------------------
+media_slider
+------------------------------
+
+====================
+prominence_scale_instr
+====================
+
+Slide the scale to indicate the degree of prominence you hear for the word in bold text.
+
+------------------------------
+end
+------------------------------
+
+====================
+test_complete
+====================
+
+Vous avez terminé.
+<br /><br />
+Veuillez entrer le texte bleu sur Mechanical Turk pour valider l'expérience.
+<br /><br />
+<font color="blue">croque monsieur</font>
+<br /><br />
+Merci de votre participation. 
+
+------------------------------
+login_bad_user_name
+------------------------------
+
+====================
+error_user_name_exists
+====================
+
+<font color="red"> ERROR: Username '%s' already exists or is invalid.  You may have already done this experiment, in which case you may not participate in it again. If you were forced to restart, use a similar name to your worker id (e.g. add a 1 to the end).</font>
+
+------------------------------
+media_test_end
+------------------------------
+
+====================
+mediaTest_no_audio
+====================
+
+Vous avez indiqué que vous ne pouvez pas entendre l'audio, donc vous ne pouvez pas participer en ce moment. Nous vous remercions de votre temps.
+
+------------------------------
+consent_end
+------------------------------
+
+====================
+consent_opt_out
+====================
+
+Vous avez choisi de ne pas participer. Nous vous remercions de votre temps.
+<br /><br />
+
+------------------------------
+boundary_and_prominence,boundary,prominence
+------------------------------
+
+====================
+nonspecific_boundary_instr
+====================
+
+Mark a boundary between words <font color="red">that belong to different chunks</font>.
+
+------------------------------
+lmeds_interface,login,login_bad_user_name
+------------------------------
+
+====================
+back_button_warning
+====================
+
+<font color="red">Attention : utiliser « Retour » ou « Rafraîchir » dans votre navigateur rendra invalide l'expérience.</font>
+
+------------------------------
+login,text_page,consent,login_bad_user_name
+------------------------------
+
+====================
+title
+====================
+
+
+------------------------------
+media_choice,media_slider
+------------------------------
+
+====================
+nonprominent
+====================
+
+Nonprominent
+
+====================
+prominent
+====================
+
+Prominent
+
+------------------------------
+boundary_and_prominence,prominence,boundary
+------------------------------
+
+====================
+nonspecific_prominence_instr
+====================
+
+Mark the words that the speaker <font color="blue">highlighted for the listener, to make them stand out</font>.
+
+------------------------------
+prominence,boundary_and_prominence
+------------------------------
+
+====================
+pbMinSelectedErrorMsg
+====================
+
+Error.  You must select at least %d word(s).
+
+------------------------------
+login,login_bad_user_name
+------------------------------
+
+====================
+error_blank_name
+====================
+
+Veuillez entrer votre ID de Mechanical Turk sans espace.
+
+====================
+unsupported_warning
+====================
+
+
+
+====================
+user_name_text
+====================
+
+<b><font size="5"> Vous avez besoin d'un clavier pour compléter cette expérience, sinon vous ne serez pas payé.</font></b></br></b></br>
+Veuillez entrer votre ID de Mechanical Turk.
+
+
+------------------------------
+media_test,media_list,media_choice,boundary_and_prominence,boundary,prominence,syllable_marking,media_slider
+------------------------------
+
+====================
+error_must_play_audio
+====================
+
+You must listen to each of the audio files at least %d time(s).
+
+====================
+error_must_play_audio_at_least
+====================
+
+You must listen to each of the audio files at least %d time(s).
+
+====================
+play_button
+====================
+
+Écouter
+
+------------------------------
+lmeds_interface,boundary_and_prominence
+------------------------------
+
+====================
+continue_button
+====================
+
+Continuer
+
+------------------------------
+boundary,boundary_and_prominence
+------------------------------
+
+====================
+pbMaxSelectedErrorMsg
+====================
+
+Error. You must not select more than %d word(s).
+
+====================
+announcement_one_play_two_responses
+====================
+
+<center> <font size = "5"> Vous allez maintenant commencer l'expérience. <br />
+Cela devrait prendre 15 minutes. </font>
+
+<br /> <br /> Appuyez sur la barre d'espace pour continuer </ center>
+
+====================
+announcement_one_play_two_responses2
+====================
+
+<center>
+<font size="5"> 
+Veuillez noter qu'il y aura quelques essais de vérification. <br /> <br />  Pour les
+essais, l'enregistrement audio vous indiquera sur quel bouton appuyer. <br /> <br /> 
+
+Veuillez à rester attentif à chaque fichier audio afin de ne manquer aucun des
+essais. </font>
+
+<br /> <br /> Appuyez sur la barre d'espace pour continuer</center>
+
+
+====================
+one_play_two_responses
+====================
+
+
+<center>Le troisième son est-il plus semblable au premier ou au deuxième ?
+<br></br>
+Appuyez sur '<b>barre d'espace</b>' pour écouter l'enregistrement audio<br /> Appuyez sur '<b>F</b>'  pour le premier son et sur '<b>J</b>' pour le deuxième son</center>
+====================
+prot_instr1
+====================
+
+<center><font size="5">Pour cette tâche, vous écouterez trois fichiers audio consécutifs
+<br /> Vous devrez dire si le troisième son est plus semblable au premier son ou au deuxième son.</font>
+<br /> <br /> Appuyez sur la barre d'espace pour continuer
+</center>
+
+====================
+prot_instr2
+====================
+
+<center><font size="5"> Veuillez mettre votre index de droit sur la touche J et votre index gauche sur la touche F. Veuillez aussi mettre un de vos pouces sur la barre d'espace.
+ <br /> <br />
+<b>barre d'espace</b> = lancer l'audio<br /> '<b>F</b>' = premier son,<br /> '<b>J</b>' = deuxième son. </font>
+<br /><br /> Appuyez sur la barre d'espace pour continuer</center>
+
+====================
+prot_instr3
+====================
+
+<center><font size="5"> Veuillez répondre le plus précisément et le plus rapidement possible. Veuillez garder vos doigts sur le clavier tout le temps de l'expérience.
+ </font> 
+<br /><br /> Appuyez sur la barre d'espace pour continuer
+</center>
+
+====================
+prot_pause
+====================
+
+<center><font size="5">Vous avez fait un tiers de l'expérience. Prenez une courte pause.
+</font>
+<br /><br />Appuyez sur la barre d'espace pour continuer
+</center>
+
+====================
+prot_pause2
+====================
+
+<center><font size="5">Vous avez fait deux tiers de l'expérience. Prenez une courte pause.
+</font>
+<br /><br />Appuyez sur la barre d'espace pour continuer
+</center>
+
+====================
+prot_announcement_catch_trial
+====================
+
+<center><font size="5"> Vous allez d'abord faire quelques essais.
+ </font> <br /><br /> Appuyez sur la barre d'espace pour continuer
+</center>
+
+====================
+prot_catch_trial
+====================
+
+<center>Le troisième son est-il plus semblable au premier son ou au deuxième son ?
+<br></br>
+Appuyez sur '<b>barre d'espace</b>' pour écouter l'audio<br /> Appuyez sur '<b>F</b>'  pour le premier son et  '<b>J</b>'  pour le deuxième son</center>
+
+====================
+apples
+====================
+
+apples
+
+====================
+tone
+====================
+
+tone
+
+====================
+1
+====================
+
+F = premier son
+
+====================
+2
+====================
+
+J = deuxième son

@@ -1,0 +1,6 @@
+date: Mar 09 2019 15:00:00
+user: njurov
+host: oberon
+name: stimuli for the strut experiment - full wav files
+source: /scratch2/njurov/abkhazia_projects/
+comment: full recordings for ABX test in separate files (per speaker)

@@ -1,0 +1,172 @@
+#!/usr/bin/env Rscript
+#args = commandArgs(trailingOnly=TRUE)
+
+#data cleaning and analysis of geomphon pilot 
+#last edit 23 October 2018 by amelia
+
+# edited for the STRUT experiment Nov 2018
+
+rm(list=ls())
+
+library(dplyr)
+library(stringr)
+
+ARGS <- commandArgs(TRUE)
+
+# Arguments 
+presurvey_file <- ARGS[1] 
+results_file <- ARGS[2]
+postsurvey_file <- ARGS[3]
+postsurvey2_file <- ARGS[4]
+acoustic_dist_file <- ARGS[5]
+output_file <- ARGS[6] #csv of filtered data for analysis
+
+
+
+
+##############
+#READ in data#
+##############
+
+#read in data files, which are the output of clean_output_pilot_Aug_2018.py
+#ARGUMENT 1:  presurvey file
+subject_info <- readr::read_csv(presurvey_file)
+
+#ARGUMENT 2:  results file
+results_only <- readr::read_csv(results_file)
+
+#ARGUMENT 3:  postsurvey file
+postsurvey<- readr::read_csv(postsurvey_file)
+
+#ARGUMENT 4:  postsurvey2 file 
+postsurvey2<- readr::read_csv(postsurvey2_file)
+
+#ARGUMENT 5: ITEM INFO 
+item_info <- readr::read_csv(acoustic_dist_file) 
+#distances_list_final.csv
+
+
+####################################
+#EXCLUSION and FILTERING OF SUBJECTS
+####################################
+
+# start with only subjects who are present in the postsurvey file 
+# (meaning presumably they finished the task)
+finishers<-dplyr::left_join(postsurvey,subject_info,by ='subject_id')
+
+finishers <- finishers %>%
+                dplyr::mutate(
+                  subject_language.x = 
+                    ifelse(subject_language.x == "fr2", 
+                         "fr",subject_language.x))
+
+finishers <- finishers %>%
+  dplyr::mutate(
+    subject_language.y = 
+      ifelse(subject_language.y == "fr2", 
+             "fr",subject_language.y))
+
+
+
+## Phonetic training filtering - exclude anyone with any classes phonet/phonol/linguistics
+subject_info_filt3 <- dplyr::filter(finishers,
+                                    phonet_course_yes == 0,
+                                    phonog_course_yes == 0,
+                                    ling_course_yes == 0)
+
+## Exclude - speech/hearing/vision problems
+subject_info_filt4 <- dplyr::filter(subject_info_filt3,
+                                    hear_vis_problems_yes == 0,
+                                    troubles_de_lang_yes == 0)
+
+## Filtering finished
+subject_info_filt <- subject_info_filt4
+
+
+
+######################################
+#ADD ACOUSTIC DISTANCES AND ITEM INFO#
+######################################
+
+#merge subject info and results
+full_results <- dplyr::left_join(subject_info_filt, 
+                                 results_only, by = 'subject_id')
+
+
+###########
+##check for failed attention checks
+
+#find attention trials, make them into a df called attention checks
+attention_checks <- dplyr::filter(full_results, grepl('atten', tripletid))
+
+#make sure variables are in correct format.
+attention_checks <- dplyr:: mutate(
+  attention_checks,
+  paid_attention = ifelse(
+    tripletid=="attention_check_english_F_norm" |
+      tripletid=="attention_check_francais_F_norm" & 
+      first_sound==1,'pass_f',
+    ifelse(
+      tripletid=="attention_check_english_J_norm" |
+        tripletid=="attention_check_francais_J_norm" & 
+        second_sound==1,'pass_j','fail')
+  )
+)
+
+
+#merge the attention checks with the whole data 
+full_results <- dplyr::left_join(full_results, attention_checks)
+
+
+#filter out subjects who failed the  attention checks  #FIXME 
+full_results %>%
+  dplyr::filter(paid_attention != "fail")
+
+
+
+colnames(item_info)[colnames(item_info)=="tripletid"] <- "tripletid"
+colnames(item_info)[colnames(item_info)=="CORR_ANS"] <- "corr_ans"
+#merge item info and results 
+full_results <- dplyr::left_join(full_results,item_info)
+
+
+
+
+######################
+#PREPARE OUTPUT FILE##
+######################
+
+#add correct/wrong column in results
+full_results$user_resp <- ifelse(full_results$first_sound == "1", "A", "B")
+#full_results$corr_ans<-str_sub(full_results$tripletid,start=-1)
+#make sure user corr is an integer, important for later statistical models.
+full_results$user_corr <- as.integer(full_results$corr_ans == full_results$user_resp)
+
+#items 49,50,100,104 were used as practice so they have twice as many trials. 
+#remove all trials of these items 
+trials_only<-dplyr::filter(full_results, !grepl('trial1', tripletid))
+trials_only<-dplyr::filter(trials_only, !grepl('trial2', tripletid))
+trials_only<-dplyr::filter(trials_only, !grepl('trial3', tripletid))
+trials_only<-dplyr::filter(trials_only, !grepl('trial4', tripletid))
+trials_only<-dplyr::filter(trials_only, !grepl('trial5', tripletid))
+trials_only<-dplyr::filter(trials_only, !grepl('trial6', tripletid))
+#remove attention trials
+trials_only<-dplyr::filter(trials_only, !grepl('attention', tripletid))
+
+
+
+#add a new column subtracting the two distances
+#trials_only$delta_dist_sub <- trials_only$distance_TGT-trials_only$distance_OTH
+
+#add a new column dividing the two distances 
+#trials_only$delta_dist_div <- trials_only$distance_TGT/trials_only$distance_OTH
+
+# add a column that takes the log 
+#trials_only$log_delta_dist_div <- log(trials_only$delta_dist_div)
+
+colnames(trials_only)
+
+
+
+#ARGUMENT 7
+write.csv(trials_only,output_file)

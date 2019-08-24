@@ -1,0 +1,539 @@
+---
+title: "Comparison between humans and models: Cog sci 2017"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r}
+library(magrittr)
+source("plot_confusion_matrix.R")
+correct_ipa <- function(data){
+  data <- data %>%
+  dplyr::mutate(vowel_eng = 
+                  ifelse(vowel_eng == "AE", "æ",
+                  ifelse(vowel_eng == "UH", "ʊ",
+                  ifelse(vowel_eng == "AH", "ʌ", 
+                  ifelse(vowel_eng == "IH", "ɪ", vowel_eng)))),
+                vowel_fr =
+                  ifelse(vowel_fr == "A", "a",
+                  ifelse(vowel_fr == "E", "ɛ", 
+                  ifelse(vowel_fr == "OE", "œ",
+                  ifelse(vowel_fr == "O", "ɔ",
+                  ifelse(vowel_fr == "Y", "y",
+                  ifelse(vowel_fr == "U", "u",
+                  ifelse(vowel_fr == "I", "i", vowel_fr)))))))
+                  )
+  return(data)
+}
+```
+
+```{r, include=FALSE}
+distances_eng_dpgmm <- readr::read_csv("model_outputs/English_1501_vtln_kl_div_final.csv") %>%
+                       dplyr::rename(distance_eng_dpgmm_TGT=distance_TGT,
+                                     distance_eng_dpgmm_OTH=distance_OTH)
+distances_fr_dpgmm <- readr::read_csv("model_outputs/French_1501_vtln_kl_div_final.csv") %>%
+                       dplyr::rename(distance_fr_dpgmm_TGT=distance_TGT,
+                                     distance_fr_dpgmm_OTH=distance_OTH)
+distances_mfcc <- readr::read_csv("model_outputs/mfccs_kaldi_cosine_final.csv") %>%
+                  dplyr::rename(distance_mfcc_TGT=distance_TGT,
+                                distance_mfcc_OTH=distance_OTH)
+humans <- readr::read_csv("outputs/analysed_data_step1.csv",
+                 col_types=readr::cols(survey_time=readr::col_character())) %>%
+  dplyr::select(-dplyr::contains("dist"), -X1) %>%
+  dplyr::mutate(subject_language=ifelse(subject_language == "fr2", "fr",
+                                        subject_language))
+results <- dplyr::left_join(humans, distances_eng_dpgmm) %>%
+  dplyr::left_join(distances_fr_dpgmm) %>%
+  dplyr::left_join(distances_mfcc) %>%
+  dplyr::mutate(delta_eng_dpgmm=distance_eng_dpgmm_OTH-distance_eng_dpgmm_TGT,
+                delta_fr_dpgmm=distance_fr_dpgmm_OTH-distance_fr_dpgmm_TGT,
+                delta_mfcc=distance_mfcc_OTH-distance_mfcc_TGT,
+                delta_eng_dpgmm_s=scale(delta_eng_dpgmm, center=FALSE),
+                delta_fr_dpgmm_s=scale(delta_fr_dpgmm, center=FALSE),
+                delta_mfcc_s=scale(delta_mfcc, center=FALSE),
+                corr_ans_c=ifelse(CORR_ANS=="A", -1, 1),
+                subject_language_c=ifelse(subject_language=="eng", -1, 1)) %>%
+  correct_ipa
+```
+
+Calculating global mean ABX scores:
+
+```{r, include=FALSE}
+summary_overall <- results %>%
+  dplyr::group_by(tripletid, context, vowel_fr, vowel_eng) %>%
+  dplyr::summarize(ABX_eng_dpgmm=delta_eng_dpgmm[1]>0,
+                   ABX_fr_dpgmm=delta_fr_dpgmm[1]>0,
+                   ABX_mfcc=delta_mfcc[1]>0,
+                   ABX_human=mean(user_corr)) %>%
+  dplyr::ungroup() %>%
+  dplyr::group_by(context, vowel_fr, vowel_eng) %>%
+  dplyr::summarize_at(dplyr::vars(dplyr::starts_with("ABX_")), mean) %>%
+  dplyr::ungroup() %>%
+  dplyr::group_by(vowel_fr, vowel_eng) %>%
+  dplyr::summarize_at(dplyr::vars(dplyr::starts_with("ABX_")), mean) %>%
+  dplyr::ungroup() %>%
+  dplyr::summarize_at(dplyr::vars(dplyr::starts_with("ABX_")), mean)
+```
+
+The models (both French-DP and English-DP) show an improvement in overall ABX scores on the new stimuli versus the scores on the acoustic baseline (MFCCs). This indicates that the model continues to do better, globally, at discriminating speech contrasts, than the acoustic baseline, on these novel recordings from novel speakers. However, our goal is to compare the model's behaviour with the behaviour of human subjects in a second-language speech perception experiment, not merely with the acoustic baseline. For reasons discussed above, the machine ABX scores are not directly comparable to human ABX scores, and we instead ask to what degree the continuous machine \textbf{discriminability score} predicts the human results (see Section \ref{abx-machine-vs-human}). We compare how well each of the three types of discriminability scores are able to predict the results of the experiment (MFCC, English-DP, French-DP). We begin with a prediction pooling English and French participants, to assess whether the DPGMM model is globally more human-like in its discrimination scores than the acoustic baseline.
+
+
+```{r}
+summary_overall
+```
+
+We use a probit regression because of its simple interpretation as a d-prime analysis (\cite{decarlo1998,macmillan2005}), using the LME4 package in R (\cite{lme4,R}). The predictor variable of interest is the machine discriminability score (distance to incorrect answer minus distance to correct answer), and the dependent variable is whether the subject responded correctly (True or False). We fit one regression per machine representation (MFCC, English-DP, French-DP), and compare the three models using AIC . We rescale the machine discriminability scores for numerical stability and for cross-model interpretability, by dividing by the root mean square, but keep zero in place for interpretability (because it is the decision threshhold for the machine ABX).
+
+Two considerations should give us pause, however. First, the experiment is not intended to yield uniformly good discrimination, containing as it does both "easy" and "difficult" cross-linguistic phoneme pairs. Second - and perhaps for this same reason - the overall ABX score in the human experiment is *worse* than the score for the MFCCs. As discussed above, however, human ABX scores and machine ABX scores are not directly comparable. For one thing, the machine ABX score is a discrimination measure for sets of tokens, not for tokens.  The correct way to compare the scores to human data is to pass the underlying machine **discriminability score** through a sigmoid function.    For another thing, humans will likely have an overall response bias: even if they are using the exact underlying discriminability scale given by one of the models, they may not place their decision threshhold at precisely zero.
+
+
+
+We fit one probit regression per distance model (MFCC, DPGMM-English, DPGMM-French), with the machine discriminability, rescaled for numerical stability and for interpretability by dividing by the root mean square, but keeping zero in place for interpretability. We include both an overall intercept and a (random) by-subject intercept in our linear model to deal with response bias. We also include a coefficient for whether the correct answer was A or B as a nuisance variable (A: -1, B: 1) to account for such an order effect. We include the native language of the participants (English: -1, French: 1) as a nuisance variable, which we allow to interact with the A/B effect (we do not include an interaction between subject language and the model discriminability scores: we test whether the DPGMM model shows a native language effect separately below). We also well as a random intercept for the individual ABX triplet (set of three stimuli).
+
+```{r}
+model_global_mfcc <- lme4::glmer(
+              user_corr ~ delta_mfcc_s + subject_language_c*corr_ans_c +
+              (1|subject_id) + (1|tripletid), 
+              family=binomial(link="probit"), data=results)
+model_global_engdp <- lme4::glmer(
+              user_corr ~ delta_eng_dpgmm_s + subject_language_c*corr_ans_c +
+              (1|subject_id) + (1|tripletid), 
+            family=binomial(link="probit"), data=results)
+model_global_frdp <- lme4::glmer(
+              user_corr ~ delta_fr_dpgmm_s +  subject_language_c*corr_ans_c + 
+              (1|subject_id) + (1|tripletid), 
+            family=binomial(link="probit"), data=results)
+```
+
+```{r}
+lme4::fixef(model_global_mfcc)
+lme4::fixef(model_global_engdp)
+lme4::fixef(model_global_frdp)
+AIC(model_global_mfcc)
+AIC(model_global_engdp)
+AIC(model_global_frdp)
+```
+
+The comparative AIC scores between the two DPGMM models indicate that, in fact, while the overall accuracy level is not in line with the human results, the DPGMM model scores nevertheless predict the human results better than the MFCCs. It is worth noting that the three regression models' predictions are largely dominated by the nuisance variables (subject language, A/B, subject and triplet random intercepts). Regression models fit without any of these nuisance variables, and with only the machine discriminability as a predictor, make fairly different predictions with respect to the MFCCs, as measured by the correlation across models between the observation-level predicted probabilities (Pearson correlations of predictions of MFCC vs English-DP regressions: 0.60; MFCC vs French-DP: 0.49), although the two trained models make relatively similar predicions on these stimuli (English-DP vs French-DP: 0.91). However, once the additional predictors are included,  little of the variance in the predictions is attributable to the type of machine discriminability used (all three Pearson correlations are greater than 0.99). This implies that taking into account such nuisance variables is potentially of great importance when comparing these kinds of model predictions to human data. For this experiment, at least, however, the ranking of the models by AIC scores stays the same when the nuisance variables are removed.
+
+```{r}
+model_global_mfcc_red <- glm(
+              user_corr ~ delta_mfcc_s,
+              family=binomial(link="probit"), data=results)
+model_global_engdp_red <- glm(
+              user_corr ~ delta_eng_dpgmm_s, 
+            family=binomial(link="probit"), data=results)
+model_global_frdp_red <- glm(
+              user_corr ~ delta_fr_dpgmm_s, 
+            family=binomial(link="probit"), data=results)
+cor(predict(model_global_mfcc_red, type="response"),
+    predict(model_global_engdp_red, type="response"))
+cor(predict(model_global_mfcc_red, type="response"),
+    predict(model_global_frdp_red, type="response"))
+cor(predict(model_global_engdp_red, type="response"),
+    predict(model_global_frdp_red, type="response"))
+```
+
+```{r}
+cor(predict(model_global_mfcc, type="response"),
+    predict(model_global_engdp, type="response"))
+cor(predict(model_global_mfcc, type="response"),
+    predict(model_global_frdp, type="response"))
+cor(predict(model_global_engdp, type="response"),
+    predict(model_global_frdp, type="response"))
+```
+
+```{r}
+AIC(model_global_mfcc_red)
+AIC(model_global_engdp_red)
+AIC(model_global_frdp_red)
+```
+
+Up to now we have examined only global comparisons between the two trained models and the whole group of human subjects, comparing each of the two models against the MFCC distances. Obviously, however, if these models are really capturing adult perception, then we would expect a ``native language effect'' for the models: the English-trained DPGMM should show results which more closely resemble those of the English listeners than the French listeners, and the French-trained DPGMM should show results which more closely resemble those of the French listeners than the English listeners. While the experiment was not designed to maximize native language effects, there certainly are effects of native language in the human results. To assess where these effects lie, we first extract a clean measure of how well humans discriminated the experimental stimuli, partialing out effects of nuisance variables such as response bias, A/B bias, and item-level effects of specific triplets. We do this by, again, fitting a probit regression separately within each group, with dependent variable being the  trial level response-accuracy (0/1), this time with predictors A/B (A: -1, B: 1), and random intercepts of subject and triplet. We take the residuals as our new measure of discriminability, and, to compare them across groups, take the average for each experimental stimulus triplet. The correlation between the two groups on this measure is high imperfect (0.63), indicating that the two groups do not treat the stimuli in the same way. Collapsing this measure (by averaging) across context, and then across speaker combination (as we did for the model scores), we obtain a phone-pair-level measure. The correlation between the two groups is higher (0.79), suggesting that a good deal of the group differences are due to (less interpretable) effects of individual stimuli, rather than the vowel contrasts we intended to test. Nevertheless, as Figure XXX confirms, the correlation rests imperfect.
+
+
+
+```{r}
+model_nuisance_fr <- lme4::glmer(
+  user_corr ~ corr_ans_c + (1|subject_id) + (1|tripletid),
+  family=binomial(link="probit"),
+  data=dplyr::filter(results, subject_language == "fr")
+)
+model_nuisance_eng <- lme4::glmer(
+  user_corr ~ corr_ans_c + (1|subject_id) + (1|tripletid),
+  family=binomial(link="probit"),
+  data=dplyr::filter(results, subject_language == "eng")
+)
+resid_fr <- results %>%
+  dplyr::filter(subject_language=="fr") %>%
+  dplyr::mutate(resid=residuals(model_nuisance_fr)) %>%
+  dplyr::group_by(tripletid, context, speaker_OTH, speaker_TGT,
+                  speaker_X, vowel_eng, vowel_fr,
+                  delta_mfcc_s, delta_eng_dpgmm_s,
+                  delta_fr_dpgmm_s) %>%
+  dplyr::summarize(resid_fr=mean(resid)) %>%
+  dplyr::ungroup()
+resid_eng <- results %>%
+  dplyr::filter(subject_language=="eng") %>%
+  dplyr::mutate(resid=residuals(model_nuisance_eng)) %>%
+  dplyr::group_by(tripletid, context, speaker_OTH, speaker_TGT,
+                  speaker_X, vowel_eng, vowel_fr,
+                  delta_mfcc_s, delta_eng_dpgmm_s,
+                  delta_fr_dpgmm_s) %>%
+  dplyr::summarize(resid_eng=mean(resid)) %>%
+  dplyr::ungroup()
+resid_human <- dplyr::left_join(resid_fr, resid_eng)
+with(resid_human, cor(resid_fr, resid_eng))
+resid_bypair <- resid_human %>%
+  dplyr::group_by(vowel_eng, vowel_fr) %>%
+  dplyr::summarize(resid_eng=mean(resid_eng),
+                   resid_fr=mean(resid_fr)) %>%
+  dplyr::ungroup()
+with(resid_bypair, cor(resid_fr, resid_eng))
+ggplot2::ggplot(resid_bypair,
+                ggplot2::aes(y=resid_fr, x=resid_eng,
+                             label=paste0(vowel_eng, ":", vowel_fr))) +
+  ggplot2::geom_smooth(method="lm", se=FALSE, lty="dashed") +
+  ggplot2::geom_text(family="Times New Roman", size=6) +
+  emdplot::emd_theme() +
+  ggplot2::theme(text=ggplot2::element_text(
+    family="Times New Roman")) +
+  ggplot2::labs(x="Residuals (English)",
+                 y="Residuals (French)") +
+  ggplot2::ggsave("Figure_FrVsEg.png", width=10, height=8)
+```
+
+
+We assess whether the DPGMM model shows a native language effect as follows: at the trial level, we associate each observation with the appropriate "native language" machine discriminability measure (the English-DP score for trials coming from English listeners, the French-DP score for trials coming from French listeners), and with the "non-native language" machine discriminability measure (the other way around: the French-DP score for trials coming from English listeners, the English-DP score for trials coming from French listeners). Returning to using the raw (correct/incorrect) responses as the dependent variable, we  construct two alternative probit regression models with the same nuisance predictors discussed in the global analysis presented in section X.X. In one model, the independent variable of interest is the "native language machine" score. In the alternative model, it is the "non-native language machine score". As before, the machine scores were rescaled but not centred.
+
+```{r}
+results <- results %>%
+  dplyr::mutate(native_machine=ifelse(subject_language == "eng",
+                                      delta_eng_dpgmm_s, delta_fr_dpgmm_s),
+                nonnative_machine=ifelse(subject_language == "eng",
+                                         delta_fr_dpgmm_s, delta_eng_dpgmm_s))
+model_native <- lme4::glmer(
+              user_corr ~ native_machine + subject_language_c*corr_ans_c +
+              (1|subject_id) + (1|tripletid), 
+            family=binomial(link="probit"), data=results)
+model_nonnative <- lme4::glmer(
+              user_corr ~ nonnative_machine +  subject_language_c*corr_ans_c + 
+              (1|subject_id) + (1|tripletid), 
+            family=binomial(link="probit"), data=results)
+```
+
+The native-language model does better than the nonnative language model. Furthermore, the native-language model does better than either of the two global DPGMM models presented above, and the nonnative language model does worse than the MFCC-based model.
+
+```{r}
+AIC(model_native)
+AIC(model_nonnative)
+```
+
+To assess whether this ievel of difference in the AUC represents a reasonable criterion,  we did a randomization test. We generated 9999 [FIXME] "null-hypothesis" samples in which the "native language $\delta$" and "nonnative language $\delta$" variables were jointly randomly shuffled (together), to break their association with the true native language of the listeners. Using the difference in AUC (native model minus nonnative model) as a test statistic, we ran the same model as above on each of these new data sets. For the real data set, the statistic is equal to `r AIC(model_native)-AIC(model_nonnative)`, and thus, if the model/listener pairing is really doing work here, we expect such a value to be in the extreme negative range of what is predicted under this randomization hypothesis.
+
+```{r}
+STAT_CACHE_FILE <- "statistics_native_nonnative.RData"
+if (!file.exists(STAT_CACHE_FILE)) {
+  N_SAMPLES <- 100
+  N_CORES <- 20
+  statistics <- NULL
+  doParallel::registerDoParallel(cores=N_CORES)
+  `%dopar%` <- foreach::`%dopar%`
+  statistics_l <- foreach::foreach(i=1:N_SAMPLES) %dopar% {
+    results_fake <- results %>%
+      dplyr::mutate(random_order=sample(1:nrow(.)),
+                    native_machine=native_machine[random_order],
+                    nonnative_machine[random_order])
+    model_native_i <- lme4::glmer(
+      user_corr ~ native_machine + subject_language_c*corr_ans_c +
+        (1|subject_id) + (1|tripletid), 
+      family=binomial(link="probit"), data=results_fake)
+    model_nonnative_i <- lme4::glmer(
+      user_corr ~ nonnative_machine +  subject_language_c*corr_ans_c + 
+        (1|subject_id) + (1|tripletid), 
+      family=binomial(link="probit"), data=results_fake)
+    AIC(model_native_i)-AIC(model_nonnative_i)
+  }
+  statistics <- unlist(statistics_l)
+  save(statistics, file=STAT_CACHE_FILE)
+} else {
+  load(STAT_CACHE_FILE)
+}
+pval_auc <- sum(statistics <=
+           (AIC(model_native)-AIC(model_nonnative)))/(length(statistics_v)+1)
+```
+
+Indeed, this level of difference in the AIC seems to represent a genuine difference (the observed value of the test statistic has a one-sided *p*-value of `r pval_auc`). 
+
+```{r}
+distances_bypair <- results %>%
+  dplyr::select(tripletid, context, speaker_OTH, speaker_TGT,
+                  speaker_X, vowel_eng, vowel_fr,
+                dplyr::starts_with("delta_")) %>%
+  dplyr::distinct() %>%
+  dplyr::group_by(speaker_OTH, speaker_TGT,
+                  speaker_X, vowel_fr, vowel_eng) %>%
+  dplyr::summarize_at(dplyr::vars(dplyr::starts_with("delta_")), mean) %>%
+  dplyr::ungroup() %>%
+  dplyr::group_by(vowel_fr, vowel_eng) %>%
+  dplyr::summarize_at(dplyr::vars(dplyr::starts_with("delta_")), mean) %>%
+  dplyr::ungroup() 
+```
+
+
+```{r}
+ggplot2::ggplot(distances_bypair,
+                ggplot2::aes(x=delta_eng_dpgmm_s,
+                             y=delta_fr_dpgmm_s,
+                             label=paste0(vowel_eng, ":", vowel_fr))) +
+  ggplot2::geom_smooth(method="lm", se=FALSE, lty="dashed") +
+  ggplot2::geom_text(family="Times New Roman", size=6) +
+  emdplot::emd_theme() +
+  ggplot2::theme(text=ggplot2::element_text(
+    family="Times New Roman")) +
+  ggplot2::labs(y="δ French-DP", x="δ English-DP")
+```
+
+---
+##SCRAP
+#
+#```{r}
+#set.seed(1)
+#resid_human_fake_model_eng <- resid_human %>%
+#  tidyr::gather(subject_language, resid,
+#                                resid_eng, resid_fr) %>%
+#  dplyr::mutate(subject_language=ifelse(subject_language == "resid_eng",
+#                                        "eng", "fr")) %>%
+#  dplyr::mutate(model_language="eng",
+#                delta_s=delta_mfcc_s + rnorm(nrow(.), 0, .01))
+#resid_human_fake_model_fr <- resid_human %>%
+#  tidyr::gather(subject_language, resid,
+#                                resid_eng, resid_fr) %>%
+#  dplyr::mutate(subject_language=ifelse(subject_language == "resid_eng",
+#                                        "eng", "fr")) %>%
+#  dplyr::mutate(model_language="fr",
+#                delta_s=delta_mfcc_s + rnorm(nrow(.), 0, .01))
+#resid_human_fake_hard <- dplyr::bind_rows(
+#  resid_human_fake_model_eng,
+#  resid_human_fake_model_fr
+#)
+#set.seed(NULL)
+#ggplot2::ggplot(resid_human_fake_hard,
+#                ggplot2::aes(x=delta_s, y=resid,
+#                             colour=paste0(subject_language,
+#                                         ":", model_language))) +
+#  ggplot2::geom_point() +
+#  ggplot2::theme(legend.position="bottom")
+#```
+#
+#```{r}
+#set.seed(1)
+#resid_human_fake_people_eng <- resid_human %>%
+#  dplyr::mutate(model_language="eng",
+#                delta_s=resid_eng + rnorm(nrow(.), 0, .01)) %>%
+#  tidyr::gather(subject_language, resid,
+#                                resid_eng, resid_fr) %>%
+#  dplyr::mutate(subject_language=ifelse(subject_language == "resid_eng",
+#                                        "eng", "fr"))
+#resid_human_fake_people_fr <- resid_human %>%
+#  dplyr::mutate(model_language="fr",
+#                delta_s=resid_fr + rnorm(nrow(.), 0, .01)) %>%
+#  tidyr::gather(subject_language, resid,
+#                                resid_eng, resid_fr) %>%
+#  dplyr::mutate(subject_language=ifelse(subject_language == "resid_eng",
+#                                        "eng", "fr"))
+#resid_human_fake_easy <- dplyr::bind_rows(
+#  resid_human_fake_people_eng,
+#  resid_human_fake_people_fr
+#)
+#set.seed(NULL)
+#ggplot2::ggplot(resid_human_fake_easy,
+#                ggplot2::aes(x=delta_s, y=resid,
+#                             colour=paste0(subject_language,
+#                                         ":", model_language))) +
+#  ggplot2::geom_point() +
+#  ggplot2::theme(legend.position="bottom")
+#```
+#
+#
+#```{r}
+#set.seed(1)
+#resid_human_real_eng <- resid_human %>%
+#  dplyr::mutate(model_language="eng",
+#                delta_s=delta_eng_dpgmm_s) %>%
+#  tidyr::gather(subject_language, resid,
+#                                resid_eng, resid_fr) %>%
+#  dplyr::mutate(subject_language=ifelse(subject_language == "resid_eng",
+#                                        "eng", "fr"))
+#resid_human_real_fr <- resid_human %>%
+#  dplyr::mutate(model_language="fr",
+#                delta_s=delta_fr_dpgmm_s) %>%
+#  tidyr::gather(subject_language, resid,
+#                                resid_eng, resid_fr) %>%
+#  dplyr::mutate(subject_language=ifelse(subject_language == "resid_eng",
+#                                        "eng", "fr"))
+#resid_human_real <- dplyr::bind_rows(
+#  resid_human_real_eng,
+#  resid_human_real_fr
+#)
+#set.seed(NULL)
+#ggplot2::ggplot(resid_human_real,
+#                ggplot2::aes(x=delta_s, y=resid,
+#                             colour=paste0(subject_language,
+#                                         ":", model_language))) +
+#  ggplot2::geom_point() +
+#  ggplot2::theme(legend.position="bottom")
+#```
+#
+#
+#```{r, include=FALSE}
+#summary_bypair <- results %>%
+#  dplyr::mutate(pred_model_g_mfcc=predict(model_global_mfcc, type="response"),
+#                pred_model_g_engdp=predict(model_global_engdp, type="response"),
+#                pred_model_g_frdp=predict(model_global_frdp, type="response")) %>%
+#  dplyr::group_by(tripletid, context, vowel_fr, vowel_eng) %>%
+#  dplyr::summarize(ABX_model_g_mfcc=mean(pred_model_g_mfcc),
+#                   ABX_model_g_engdp=mean(pred_model_g_engdp),
+#                   ABX_model_g_frdp=mean(pred_model_g_frdp),
+#                   ABX_human=mean(user_corr)) %>%
+#  dplyr::ungroup() %>%
+#  dplyr::group_by(context, vowel_fr, vowel_eng) %>%
+#  dplyr::summarize_at(dplyr::vars(dplyr::starts_with("ABX_")), mean) %>%
+#  dplyr::ungroup() %>%
+#  dplyr::group_by(vowel_fr, vowel_eng) %>%
+#  dplyr::summarize_at(dplyr::vars(dplyr::starts_with("ABX_")), mean) %>%
+#  dplyr::ungroup()
+#```
+#
+#```{r}
+#ggplot2::ggplot(summary_bypair,
+#                ggplot2::aes(
+#                  x=ABX_model_g_mfcc,
+#                  y=ABX_human,
+#                  label=paste0(vowel_eng, ":", vowel_fr))) +
+#  ggplot2::xlim(c(0.5, 1)) +
+#  ggplot2::geom_text() +
+#  emdplot::emd_theme()
+#ggplot2::ggplot(summary_bypair,
+#                ggplot2::aes(
+#                  x=ABX_model_g_engdp,
+#                  y=ABX_human,
+#                  label=paste0(vowel_eng, ":", vowel_fr))) +
+#  ggplot2::xlim(c(0.5, 1)) +
+#  ggplot2::geom_text() +
+#  emdplot::emd_theme()
+#ggplot2::ggplot(summary_bypair,
+#                ggplot2::aes(
+#                  x=ABX_model_g_frdp,
+#                  y=ABX_human,
+#                  label=paste0(vowel_eng, ":", vowel_fr))) +
+#  ggplot2::xlim(c(0.5, 1)) +
+#  ggplot2::geom_text() +
+#  emdplot::emd_theme()
+#```
+#
+#Coarse grained result: pairs with top 50% scores.
+#
+#```{r}
+##best_fr <- summary_bypair %>% 
+##  dplyr::arrange(dplyr::desc(ABX_human)) %>% 
+##  dplyr::filter(subject_language == "fr") %>% .[1:14,]
+##summary_best_fr <- best_fr %>%
+##  dplyr::summarize_at(dplyr::vars(dplyr::starts_with("ABX_")), mean)
+##best_eng <- summary_bypair %>% 
+##  dplyr::arrange(dplyr::desc(ABX_human)) %>% 
+##  dplyr::filter(subject_language == "eng") %>% .[1:14,]
+##summary_best_eng <- best_eng %>%
+##  dplyr::summarize_at(dplyr::vars(dplyr::starts_with("ABX_")), mean)
+#```
+#
+#Summary of results for French
+#
+#```{r}
+##summary_best_fr
+#```
+#
+#Summary of results for English
+#
+#```{r}
+##summary_best_eng
+#```
+#
+#Plot humans by language
+#
+#```{r}
+##plot_spk_language(dplyr::filter(summary_bypair,
+##                                subject_language == "eng"),
+##                  "ABX_human", "ABX discrimination results: English listeners", 1, 0)
+#```
+#
+#```{r}
+##plot_spk_language(dplyr::filter(summary_bypair,
+##                                subject_language == "fr"),
+##                  "ABX_human", "ABX discrimination results: French listeners", 1, 0)
+#```
+#
+#Plot machines by language
+#
+#```{r}
+##plot_spk_language(dplyr::filter(summary_bypair,
+##                                subject_language == "eng"),
+##                  "delta_eng_dpgmm", "ABX discrimination results: English-trained DPGMM")
+#```
+#
+#```{r}
+##plot_spk_language(dplyr::filter(summary_bypair,
+##                                subject_language == "fr"),
+##                  "delta_fr_dpgmm", "ABX discrimination results: French-trained DPGMM")
+#```
+#
+#
+#Plot human vs machine (French)
+#
+#```{r}
+##ggplot2::ggplot(dplyr::filter(summary_bytripletid,
+##                              subject_language=="fr"),
+##                ggplot2::aes(x=delta_fr_dpgmm,
+##                             y=ABX_human,
+##                             label=paste0(vowel_eng, ":", vowel_fr))) +
+##  ggplot2::geom_text()
+#```
+#
+#
+#Plot human vs machine (English)
+#
+#```{r}
+##ggplot2::ggplot(dplyr::filter(summary_bytripletid,
+##                              subject_language=="eng"),
+##                ggplot2::aes(x=delta_eng_dpgmm,
+##                             y=ABX_human,
+##                             label=paste0(vowel_eng, ":", vowel_fr))) +
+##  ggplot2::geom_text()
+#```
+#
+#
+#
+#Plot human vs MFCC (French)
+#
+#```{r}
+##ggplot2::ggplot(dplyr::filter(summary_bytripletid,
+##                              subject_language=="fr"),
+##                ggplot2::aes(x=delta_mfcc,
+##                             y=ABX_human,
+##                             label=paste0(vowel_eng, ":", vowel_fr))) +
+##  ggplot2::geom_text()
+#```
+#
+#
+#Plot human vs MFCC (English)
+#
+#```{r}
+##ggplot2::ggplot(dplyr::filter(summary_bytripletid,
+##                              subject_language=="eng"),
+##                ggplot2::aes(x=delta_mfcc,
+##                             y=ABX_human,
+##                             label=paste0(vowel_eng, ":", vowel_fr))) +
+##  ggplot2::geom_text()
+#```
+---

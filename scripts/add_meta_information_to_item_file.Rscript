@@ -1,0 +1,116 @@
+#!/usr/bin/env Rscript
+
+# Adds the meta-information to the August 2018 pilot
+# item file
+#
+# Author: Nika Jurov
+
+format_numeric <- function(x, ...) {
+  numeric_cols <- vapply(x, is.numeric, logical(1))
+  x[numeric_cols] <- lapply(x[numeric_cols], format,
+                              trim=TRUE, nsmall=6, ...)
+  return(x)
+}
+
+`%>%` <- magrittr::`%>%`
+
+ARGS <- commandArgs(TRUE)
+
+# Item file generated from TextGrids
+# e.g., "ABX_ITEM_FILE.item"
+INPUT <- ARGS[1] 
+
+# Updated item file to write
+OUTPUT <- ARGS[2] 
+
+ARPABET_TO_TARGET_PHONE <- c(
+  UH="ʊ", AE="æ", AH="ʌ", IH="ɪ", EH="ɛ",   
+  Y="y", I="i", OE="œ", U="u", A="a", O="ɔ",
+  SH="ʃ", P="p", T="t", K="k", V="v",
+  B="b", D="d", G="g", Z="z", S="s", F="f"
+)
+
+
+
+
+extract_context <- function(x){
+  first_two_letters <- substring(x, 1, 2)
+  last_two_letters <- substring(x, (nchar(x)-1), nchar(x))
+
+  if(first_two_letters == "SH"){
+  C1 <- "SH"}
+  else{
+  C1 <- substring(x, 1, 1)
+  }
+
+  if(last_two_letters == "SH"){
+  C2 <- "SH"
+  }
+  else{
+  C2 <- substring(x, nchar(x), nchar(x))
+  }
+
+  context <- paste0(C1, "_", C2)
+  return(context)
+}
+
+extract_context_all <- Vectorize(extract_context)
+
+
+extract_vowel <- function(x){
+  first_two_letters <- substring(x, 1, 2)
+  last_two_letters <- substring(x, (nchar(x)-1), nchar(x))
+
+  if(first_two_letters == "SH"){
+  C1 <- "SH"}
+  else{
+  C1 <- substring(x, 1, 1)
+  }
+
+  if(last_two_letters == "SH"){
+  C2 <- "SH"
+  }
+  else{
+  C2 <- substring(x, nchar(x), nchar(x))
+  }
+
+  vowel1 <- gsub(C1, '', x)
+  vowel <- gsub(C2, '', vowel1)
+  return(vowel)
+}
+
+extract_vowel_all <- Vectorize(extract_vowel)
+
+
+
+
+
+bili_mono <- function(x) {
+  if (x == "Cecilia") {
+  return("bl")
+  }
+  else if (x == "Veronique") {
+  return("bl")
+  }
+  else {
+  return("ml")
+  }
+}
+
+bili_mono_all <- Vectorize(bili_mono)
+
+
+
+readr::read_delim(INPUT, delim=" ", col_types=readr::cols(
+    `#file` = readr::col_character(), onset = readr::col_double(),
+    offset = readr::col_double(), `#item` = readr::col_character(),
+    word = readr::col_character())) %>%
+  dplyr::mutate(speaker=(function(x) sapply(strsplit(x, "_"),
+                                            function(y) y[[1]]))(`#item`)) %>%
+  dplyr::mutate(context=(extract_context_all(word))) %>%
+  dplyr::mutate(vowel=(extract_vowel_all(word))) %>%
+  dplyr::mutate(language=(function(x) sapply(strsplit(x, "_"),
+                                            function(y) y[[3]]))(`#item`)) %>%
+  dplyr::mutate(blml=(bili_mono_all(speaker))) %>%
+  format_numeric() %>% 
+  readr::write_delim(OUTPUT, delim=" ")

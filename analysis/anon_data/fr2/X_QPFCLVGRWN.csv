@@ -1,0 +1,8 @@
+login,[orderSI=0,orderAI=0],None,None,0:21.4,0;,[]
+media_test,[audio,apples,orderSI=1,orderAI=1],1,None,0:16.1,1;,[]
+consent,[prot_demo_consent,orderSI=2,orderAI=2],None,None,0:7.1,2;,[]
+valsurvey,[presurvey_fr,orderSI=3,orderAI=3],None,None,0:42.6,3;,0,0,0,1,0,0,0,1,0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,1,0,1,0,1,0,1
+text_page,[prot_instr1,bindSubmitKeyIDList=,[space],orderSI=4,orderAI=4],None,None,0:3.1,4;,[]
+text_page,[prot_instr2,bindSubmitKeyIDList=,[space],orderSI=5,orderAI=5],None,None,0:14.9,5;,[]
+text_page,[prot_instr3,bindSubmitKeyIDList=,[space],orderSI=6,orderAI=6],None,None,0:4.1,6;,[]
+text_page,[prot_announcement_catch_trial,bindSubmitKeyIDList=,[space],orderSI=7,orderAI=7],None,None,0:4.3,7;,[]

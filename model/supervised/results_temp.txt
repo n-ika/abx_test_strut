@@ -1,0 +1,103 @@
+================================================================
+LM - FILTERED STIMULI - LEXICON HAS ONLY STIMULI WORDS
+================================================================
+
+
+FRENCH
+nnet                %WER 43.45
+nnet equiprobable   %WER 44.05
+tri-sa              %WER 41.07
+tri-sa equiprobable %WER 44.05
+tri                 %WER 48.21
+tri equiprobable    %WER 51.79
+mono                %WER 48.81
+mono equiprobable   %WER 48.81
+
+ENGLISH
+tri-sa              %WER 35.12
+tri-sa equiprobable %WER 34.52
+tri                 %WER 41.67
+tri equiprobable    %WER 40.48
+mono                %WER 41.07
+mono equiprobable   %WER 38.69
+
+================================================================
+LM - ALL STIMULI - LEXICON HAS ONLY STIMULI WORDS
+================================================================
+
+FRENCH
+nnet_equi   %WER 88.10 
+tri-sa      %WER 276.19
+tri-sa_equi %WER 99.40
+
+ENGLISH
+tri-sa      %WER 83.33
+tri-sa_equi %WER 65.18
+
+================================================================
+LM - ALL STIMULI - LEXICON HAS ALL POSSIBLE CVCS OF THE LANGUAGE
+================================================================
+
+FRENCH
+tri-sa      %WER 265.77
+tri-sa_equi %WER 100.00
+
+ENGLISH
+tri-sa      %WER 83.33
+tri-sa_equi %WER 81.55
+
+================================================================
+LM - 1GR PHONE - from phone-corpus
+================================================================
+FRENCH
+mono        %WER 304.17
+mono_equi   %WER 100.00
+tri-sa      %WER 514.58
+tri-sa_equi %WER 100.00
+
+ENGLISH
+mono        %WER 100.60
+mono_equi   %WER 100.00
+tri-sa      %WER 123.21
+tri-sa_equi %WER 100.00
+no unk tri-sa %WER 197.62
+
+
+
+================================================================
+CORPORA - TEST - ALL AMS - LM DONE ON TRAINING DATA
+================================================================
+FRENCH
+mono        %WER 53.74  //  %WER 53.95
+tri         %WER 38.07  //
+tri-sa      %WER 36.34  //
+
+ENGLISH
+mono       %WER 44.72
+tri        %WER 20.90
+tri-sa     %WER 17.87
+
+
+================================================================
+SENTENCE SAMPLE - INTO WORDS
+================================================================
+
+FRENCH
+
+mono        %WER 93.55
+tri         
+tri-sa      %WER 35.48
+tri-sa_equi %WER 32.26
+
+ENGLISH
+mono        %WER 65.12
+tri         %WER 69.77
+tri-sa      
+tri-sa_equi %WER 11.63
+
+
+Mean CER of decode_en_word.txt is: 0.433779761905
+Mean CER of decode_fr_word.txt is: 0.860119047619
+
+Mean CER of english_corpus_phone.txt is: 0.312572512801
+Mean CER of french_corpus_phone.txt is: 0.368576584946

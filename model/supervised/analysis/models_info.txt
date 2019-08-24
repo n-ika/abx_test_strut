@@ -1,0 +1,30 @@
+ACOUSTIC MODEL
+
+The acoustic model is a triphone speaker adaptive model which had the following parameters:
+
+    * Transition-probability scale (relative to acoustics) = 1.0
+    * Scale of self-loop versus non-self-loop log probs (relative to acoustics) = 0.1
+    * Scaling factor for acoustic likelihoods = 0.1
+    * Decoding beam used in alignment = 10
+    * Decoding beam for second try at alignment = 40
+    * If true, do careful alignment, which is better at detecting alignment failure (involves loop to start of decoding graph) = False
+    * Factor by which to boost silence likelihoods in alignment = 1.0
+    * Update type for FMLLR (full|diag|offset|none) = full
+    * Iterations on which to align features on the model = [2, 4, 6, 12]
+    * Number of iterations for training = 35
+    * Last iteration to increase number of Gaussians on = 25
+    * Weight on silence in fMLLR estimation = 0.0
+    * Maximum number of leaves to be used in tree-buliding = 2500
+    * Target number of Gaussians at the end of training = 15000
+
+LANGUAGE MODELS
+
+level: word/phone
+order: number - n-gram
+silence_probability = 0.5 (default in Kaldi, also here in all LMs)
+position_dependent_phones = True (the language model produced is destined to be used with an acoustic model trained with word position dependent variants of the phones)
+
+English test corpus, decoded with the AM and LM calculated from the training data (En. corpus):
+    %WER 30.50 [ 9581 / 31408, 1223 ins, 1165 del, 7193 sub ]
+French test corpus, decoded with the AM and LM calculated from the training data (Fr. corpus):
+    %WER 7.77 [ 188 / 2419, 18 ins, 126 del, 44 sub ]

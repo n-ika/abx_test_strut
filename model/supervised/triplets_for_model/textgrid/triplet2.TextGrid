@@ -1,0 +1,84 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0.0124716553288 
+xmax = 2.25736961451 
+tiers? <exists> 
+size = 2 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "phone" 
+        xmin = 0.0124716553288 
+        xmax = 2.25736961451 
+        intervals: size = 11 
+        intervals [1]:
+            xmin = 0.0124716553288 
+            xmax = 0.142176870748 
+            text = "V" 
+        intervals [2]:
+            xmin = 0.142176870748 
+            xmax = 0.351700680272 
+            text = "AE1" 
+        intervals [3]:
+            xmin = 0.351700680272 
+            xmax = 0.431519274376 
+            text = "B" 
+        intervals [4]:
+            xmin = 0.431519274376 
+            xmax = 0.960317460317 
+            text = "sp" 
+        intervals [5]:
+            xmin = 0.960317460317 
+            xmax = 1.01020408163 
+            text = "V" 
+        intervals [6]:
+            xmin = 1.01020408163 
+            xmax = 1.18979591837 
+            text = "AA1" 
+        intervals [7]:
+            xmin = 1.18979591837 
+            xmax = 1.3215227884139444 
+            text = "B" 
+        intervals [8]:
+            xmin = 1.3215227884139444 
+            xmax = 1.79841269841 
+            text = "sp" 
+        intervals [9]:
+            xmin = 1.79841269841 
+            xmax = 1.87823129252 
+            text = "V" 
+        intervals [10]:
+            xmin = 1.87823129252 
+            xmax = 2.04784580499 
+            text = "AA1" 
+        intervals [11]:
+            xmin = 2.04784580499 
+            xmax = 2.25736961451 
+            text = "B" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "word" 
+        xmin = 0.0124716553288 
+        xmax = 2.25736961451 
+        intervals: size = 5 
+        intervals [1]:
+            xmin = 0.0124716553288 
+            xmax = 0.431519274376 
+            text = "VAEB" 
+        intervals [2]:
+            xmin = 0.431519274376 
+            xmax = 0.9307559258018397 
+            text = "sp" 
+        intervals [3]:
+            xmin = 0.9307559258018397 
+            xmax = 1.2622491631862658 
+            text = "VAB" 
+        intervals [4]:
+            xmin = 1.2622491631862658 
+            xmax = 1.76278199844222 
+            text = "sp" 
+        intervals [5]:
+            xmin = 1.76278199844222 
+            xmax = 2.25736961451 
+            text = "VAB" 

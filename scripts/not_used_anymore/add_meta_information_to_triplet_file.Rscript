@@ -1,0 +1,51 @@
+#!/usr/bin/env Rscript
+
+# Adds the meta-information to the August 2018 pilot
+# triplet file
+#
+# Author: Ewan Dunbar
+
+`%>%` <- magrittr::`%>%`
+
+ARGS <- commandArgs(TRUE)
+
+# CSV task file 
+# e.g., "ABX_TASK_FILE.csv"
+TASK_FILE <- ARGS[1] 
+
+# Updated item file
+# e.g., "ABX_ITEM_FILE_COMPLETE.item"
+ITEM_FILE <- ARGS[2] 
+
+# Updated triplet file to write
+OUTPUT <- ARGS[3] 
+
+task <- readr::read_csv(TASK_FILE, col_types=readr::cols(
+    file_TGT = readr::col_character(), onset_TGT = readr::col_double(),
+    offset_TGT = readr::col_double(), file_OTH = readr::col_character(),
+    onset_OTH = readr::col_double(), offset_OTH = readr::col_double(),
+    file_X = readr::col_character(), onset_X = readr::col_double(),
+    offset_X = readr::col_double()))
+item <- readr::read_delim(ITEM_FILE, delim=" ", col_types=readr::cols(
+    `#file` = readr::col_character(), onset = readr::col_double(),
+    offset = readr::col_double(), `#item` = readr::col_character(),
+    word = readr::col_character(), speaker = readr::col_character(),
+    context = readr::col_character(),
+    vowel = readr::col_character(),
+    language = readr::col_character(),
+    blml = readr::col_character())) %>%
+  dplyr::rename_all(.funs=list(function(x) sub("#", "", x)))
+task_tgt <- dplyr::select(task, dplyr::ends_with("_TGT")) %>%
+  dplyr::rename_all(.funs=list(function(x) sub("_.*", "", x))) %>%
+  dplyr::left_join(item, by=c("file", "onset", "offset")) %>% 
+  dplyr::rename_all(.funs=list(function(x) paste0(x, "_TGT")))
+task_oth <- dplyr::select(task, dplyr::ends_with("_OTH")) %>%
+  dplyr::rename_all(.funs=list(function(x) sub("_.*", "", x))) %>%
+  dplyr::left_join(item, by=c("file", "onset", "offset")) %>%
+  dplyr::rename_all(.funs=list(function(x) paste0(x, "_OTH")))
+task_X <- dplyr::select(task, dplyr::ends_with("_X")) %>%
+  dplyr::rename_all(.funs=list(function(x) sub("_.*", "", x))) %>%
+  dplyr::left_join(item, by=c("file", "onset", "offset")) %>%
+  dplyr::rename_all(.funs=list(function(x) paste0(x, "_X")))
+dplyr::bind_cols(task_tgt, task_oth, task_X) %>%
+  readr::write_csv(OUTPUT)

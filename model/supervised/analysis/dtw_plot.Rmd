@@ -1,0 +1,101 @@
+---
+title: "Dtw Plot"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(dtw)
+
+f_mfcc1 <- readr::read_csv("/Users/njurov/Documents/Diderot/Memoire_M2/abx_test_strut/model/mfccs/speech_feat_python/triplet082_TGT_mfcc.csv",
+                         col_names = FALSE)
+f_mfcc2 <- readr::read_csv("/Users/njurov/Documents/Diderot/Memoire_M2/abx_test_strut/model/mfccs/speech_feat_python/triplet082_OTH_mfcc.csv",
+                         col_names = FALSE)
+```
+
+```{r}
+
+mfcc1 <- as.numeric(f_mfcc1[7,])
+mfcc2 <- as.numeric(f_mfcc2[13,])
+
+m1 <- f_mfcc1[7]
+m2 <- f_mfcc2[13]
+
+dtw(mfcc1,mfcc2,step=asymmetricP2,keep=TRUE, window.type = "itakura")->alignment;
+dtw(m1,m2,step=asymmetricP2,keep=TRUE, window.type = "itakura")->alignment2;
+
+
+dtwPlotTwoWay(alignment2, offset=-100, pch=21, match.col="mistyrose3", match.lty=6,
+              xlab="Sound 1", ylab="Sound 2");
+
+
+plot(alignment,offset=-45,type="two", lwd=3, 
+     col=c("mistyrose3", "darkolivegreen4"), match.col="grey50",
+     main="A DTW example of two vectors",
+     xlab="MFCC indices",
+     ylab="MFCC features values");
+
+legend("bottomright",c("Vector of sound 1","Vector of sound 2"), 
+       bty = "n", pch=19, inset = c(-0.25, -0.2),
+       cex = 1,
+       col=c("mistyrose3", "darkolivegreen4"))
+
+```
+
+
+```{r}
+mfcc_joined_ <- data.frame(index = 1:length(mfcc1),
+                   mfcc1 = mfcc1, mfcc2 = mfcc2) 
+
+mfcc_joined <- mfcc_joined_ %>%
+      dplyr::mutate(mfcc2_offset = mfcc2 + 15)
+
+mfcc_long <- mfcc_joined %>%
+  tidyr::gather(variable, value, -index)
+
+plot_dtw <- ggplot2::ggplot(mfcc_long, ggplot2::aes(x = index, y = value)) +
+  ggplot2::geom_line(ggplot2::aes(colour = variable)) +
+  ggplot2::geom_segment(data = mfcc_joined, 
+                         ggplot2::aes(x = index, y = mfcc1, 
+                                      xend = index, yend = mfcc2, linetype = 'dashed'))
+plot_dtw
+```
+
+
+
+
+```{r}
+library(cowplot)
+cbPalette <- c("#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+set.seed(127)
+wdata = dplyr::as_data_frame(data.frame(Distributions = factor(rep(c("Gaussian 1", "Gaussian 2", 
+                                                              "Gaussian 3", "Gaussian 4",
+                                                              "Gaussian 5", "Gaussian 6"), each=1000)), 
+                                      values = c(rnorm(1000,-10,5),rnorm(1000,3,2),
+                                                 rnorm(1000,10,3),rnorm(1000,17,1.5),
+                                                 rnorm(1000,27,3),rnorm(1000,45,6))))
+#wdata
+
+a <- ggplot2::ggplot(wdata, ggplot2::aes(x = values)) + 
+  ggplot2::geom_density(ggplot2::aes(fill = values), alpha = 0.4) + 
+  #ggplot2::geom_area(stat="bin", bins = 50) +
+  #ggplot2::scale_fill_manual(values=cbPalette) +
+  ggplot2::ylab("Probability density") +
+  ggplot2::xlab("Values") 
+
+b  <- ggplot2::ggplot(wdata, ggplot2::aes(x = values)) + 
+  ggplot2::geom_density(ggplot2::aes(fill = Distributions), alpha = 0.4) + 
+  #ggplot2::geom_area(stat="bin", bins = 50) +
+  #ggplot2::scale_fill_manual(values=cbPalette) +
+  ggplot2::ylab("Probability density") +
+  ggplot2::xlab("Values") 
+
+plot_grid(a, b, labels = c("",""), rel_widths = c(1, 1.45))
+```
+
+```{r}
+phone_labels_ipa <- c("ɑː","æ","ʌ","ɔː","aʊ","aɪ","b","ʧ","d","ð","ɛ","ɝ","eɪ","f","g","h","ɪ","iː","ʤ","k","l","m","n","ŋ","NSN","oʊ","ɔɪ","p","r","s","ʃ","SIL", "SPN", "t","θ","ʊ","uː","v","w","j","z","ʒ")
+phn_based_en2 <- pg_plot(phn_based_corpus_1phn_en, "Utterance as a posterior gram — example", phone_labels_ipa)
+phn_based_en2
+```
+
+

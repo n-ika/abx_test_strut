@@ -1,0 +1,6 @@
+date: Jan 30 2019 16:00:00
+user: njurov
+host: oberon
+name: stimuli for the strut experiment
+source: /scratch2/njurov/abkhazia_projects/
+comment: 112 triplets in separate interval files

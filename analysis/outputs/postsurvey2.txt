@@ -1,0 +1,148 @@
+subject_id,subject_language,survey_time,comments,experiment_topic
+X_NUXHLOJYVC,eng,0:17.6,No but thanks.,How our brain perceives sounds.
+X_BXDUYGLTPI,eng,0:15.7,I think it was an interesting test. I had no issues with it.,No I do not.
+X_PGESXNWMAC,eng,2:20.5,I thought it was interesting. I found myself thinking abut when I was studying French and German how you are told (as an English speaker) to produce the French u or the German umlauted u sound--say a long e and the bring the lips forward to the pursed position. So the e and that u are similar I guess?,I am not sure. Whether it's the way things sound that makes them similar or the way in which we produce the sound?
+X_NTYKMBLRZJ,eng,0:34.5,it's a bit odd but it was nice doing something a little different. I think the pay is fair for the time spent,not sure something to do with human hearing I suppose
+X_DEJRLMYFHX,eng,1:25.5,It was interesting.  I didn't have any technical issues; all went well.,Maybe to see how people from different regions hear sounds differently?
+X_OAZPBLCXSD,eng,1:9.2,I think the test was simple and I were engaged in it. The test ran perfectly.,How people interpret what we hear.
+X_CGJFIRPMVZ,eng,0:59.9,Fun and different no problems,I do not but hope to see an explanation on the debriefing page
+X_NYVSJXPQCL,eng,0:14.0,No issues.,Not sure.
+X_KLNYJUXABO,eng,0:15.4,It was easy to complete. No technical issues. ,I am unsure.
+X_OWQUXVDATJ,eng,0:36.4,Most of them were pretty easy but a few were really hard and a dozen or so in the middle.,Something about language.
+X_SYIXBAZGOV,eng,0:58.2,no difficulties encountered,you test how participants interpret sounds
+X_YDHWTMXLEA,eng,0:19.5,It was fine.,No idea.
+X_LMORKPZSJW,eng,0:2.7,,
+X_LUZMERKFPT,eng,0:42.3,I really enjoyed this test! I thought it was fun. ,I'm not sure other than possibly how I perceive changes in pronunciation of certain vowel sounds given accents.
+X_UTJHEKXNZF,eng,1:40.9,Nothing wrong it was very responsive although sometimes I was under the impression that I didn't need to press the spacebar.,Nope.
+X_PDYRONZUBX,eng,0:46.1,there were no issues. not sure what it was about though.,No idea
+X_PJXOTLUYRG,eng,0:15.1,how we gauge certain sounds of words,no idea
+X_QRIKDZLWCS,eng,0:32.5,No technical issues. The hand placement gets tiring after awhile.,None.
+X_DCXNASELVF,eng,0:27.0,i liked it - i didn't encounter any issues and i thought it was a lot of fun,no
+X_XTJBZALRGH,eng,1:48.1,Interesting.  It might be a little easier if you used people with a similar depth of speech.  One of the women was a soprano and if was a little harder to determine similiarity between her and the man (tenor). ,Unsure. 
+X_ZKIPQUTLHW,eng,0:25.3,No technical issues,Differentiating sounds
+X_BTHIMYPXNE,eng,0:13.4,no problems,no idea
+X_IPLHWRAJTQ,eng,0:24.0,All good,Difference in speech of similar words
+X_CSXUFHEMAN,eng,0:22.2,No problems encountered with the study.,I'm not entirely certain.
+X_OUVICNRKGB,eng,0:16.9,no problems,not sure
+X_VPYJRCZIFO,eng,0:12.1,No,perception of sound
+X_VBJCRILGYA,eng,0:25.6,good test and no issues.,how people hear sounds 
+X_RXBKDLHZOY,eng,0:15.8,thanks,pitch people hear
+X_QAVXBMOFTN,eng,1:9.7,I liked it and enjoyed it a lot.  I had trouble though with a few where all 3 sounded so much a like.  No problems no technical issues. it was a pleasant experiment.,how well we can depict language sounds.  
+X_ZUEATMWBPC,eng,0:57.9,Everything seemed to work as intended.,To study how people interpret sounds and if or how this relates to language backgrounds.
+X_COGKIVQHTD,eng,1:4.1,No technical issues encountered and no notable complaints either.,Probably how well a person can differentiate sounds in other languages based on their language background. (If they only know English are bilingual and etc.)
+X_WYDQRUMOGX,eng,0:7.9,It ran a little bit slow ,No
+X_GPWZYBMCIA,eng,0:8.1,thank you,no i dont
+X_YNDSGKTRWQ,eng,0:13.5,Nothing in particular,No idea. 
+X_DIWNKZUABP,eng,0:18.1,I had no issues.,How the ear categorizes sounds.
+X_HFBDMSOJIQ,eng,0:47.1,I thought it was fine and well made. It ran smoothly.,Possibly to understand how people perceive certain sounds or phonemes when said by people with certain accents.
+X_TEIAYJQVWD,eng,0:13.9,,
+X_LYNRJZOKTD,eng,1:5.3,None.,Sometimes it sounded like all three were the same maybe you were seeing if people picked the male or female voice.
+X_SIZPBMUGQR,eng,0:28.6,I had no issues the hit worked surprisingly well.,I think you might have been investigating how people subconsciously hear things that aren't there.
+X_UNLMPXIBTO,eng,1:20.4,It was interesting some of the sound clips I had no idea which one was more similar. I didn't have any technical issues.,It could be what sounds we detect if we know various languages. A lot of the sounds sounded similar to sounds in German(which I know a little bit)  but we don't have them in English so someone who isn't familiar with German might not hear some differences. 
+X_IGZVPXWCUO,eng,0:10.1,very nice survey,nice
+X_FUZXWEYBTG,eng,0:54.9,I liked how quickly the page loaded and I was able to use my mouse easily instead of pressing keys on the keyboard.,I'm not really entirely sure.
+X_CXWEFJKVMB,eng,0:7.9,Everything went well,No
+X_FMCRSQKIXY,eng,0:16.1,No problems. Great experiment!,I have no idea.
+X_GNWJLPMTDV,eng,2:17.8,No technical issues.,This was to test which sounds are harder for people to distinguish between. Most were easy but with some of them it was hard to detect a difference. 
+X_QSVOEGXINT,eng,1:20.3,I appreciated the breaks. I think that if I had to do it all in one stretch I would have gotten burnt out.,How people perceive differences in phonics across languages? 
+X_MGRCZVJEHK,eng,0:47.8,All of the pages and files loaded in an instant  no problems at all.,How people pronounce things differently. 
+X_PKWUARXSQD,eng,1:1.7,A few of the audio files seemed a little corrupted but I could still make them out well enough.,I think you're probably investigating phonetics and how different words may be heard differently based on different vowel clusters.
+X_QHDWTONPZL,eng,0:48.1,To know how people distinguish sound pronunciation.,
+X_JRVQALMGFC,eng,0:30.8,Language  - No,
+X_JWXNBSRPMC,eng,0:26.6,It was interesting. I did not encounter any issues,No
+X_OKNUIYDEPA,eng,1:25.2,The test was fine though I made a handful of mistakes,Looking into how respondents differentiate accents based on their linguistic ability.
+X_RBSZECIGDN,eng,0:45.3,no technical issues no complaints. some of the sounds it was very difficult to differentiate.,something along the lines of testing for ability to discern in very subtle variations
+X_ASVWHXGDFQ,eng,1:28.0,No issues. Nothing really to add. Everything worked well. ,Not really though there were vowel sounds (thinking of umlauts from German) I know are more common in other languages but lacking in English so maybe to do with the ability to differentiate them. 
+X_QZDMBTYNGK,eng,0:27.3,The F and J keys did not work I had to use my mouse,none
+X_VAMSBDUGZW,eng,0:46.8,Interesting no issues thanks!,Consistency and what components of the sounds cued people to find similarities
+X_EYHGLSPTKI,eng,1:23.4,It was pretty interesting. I'd have liked an opportunity to replay a few comparisons where the differences were not immediately apparent. I suppose that's part of the point of the exercise though.,Potentially whether people are judging on the basis of vowel or consonant shift? (I mostly tuned into the vowels even knowing how variable they are even within a single dialect of a single language.)
+X_OVEYAZDHPC,eng,0:34.8,no issues good study,good
+X_ZSIPLDBTOF,eng,1:10.0,The test was very responsive and loaded very quickly. I had no issues at all in hearing the variations in tone. It was well done!,Not really. It was simple but very effective.
+X_GZHADXOIMR,eng,0:9.7,no comments,no idea
+X_UPRWKOJLGT,eng,1:3.6,I enjoyed the test.  I thought that it was well structured and easy to complete.  Thanks for the opportunity to participate and good luck with your research!,I think that you are determining how participants distinguish between different sounds and accents and which sounds and accents are similar versus which are different.
+X_HEXAPQTRNS,eng,0:49.4,I didn't encounter any issues personally.,I can't say I am entirely sure what you were looking for.
+X_SZTEXPBCIO,eng,0:28.6,I thought it went well and there were no issues. Everything went smoothly.,I have no idea honestly. Maybe just studying how people listen and hear words?
+X_NYFGLWTEPO,eng,15:12.7,I thought the test was interesting and a little challenging. I didn't encounter any technical difficulties at all.,Maybe people's perception of noises or sounds in relation to one another based on accents. I have no clue honestly
+X_JBYNULWKEF,eng,0:15.5,no problems at all,No idea
+X_IMSYHRZVQE,eng,0:29.5,It was fine.,No.
+X_TMOHADFKVL,eng,0:55.9,Instructions were clear and audio was clear. ,You are trying to determine who are pronouncing word correctly in a different language. 
+X_RBADOUWFGX,eng,0:53.7,Very easy test,Understand differences between sounds from female and male voices. 
+X_QABFWVJOZK,eng,0:24.3,Phonotic sound differences,
+X_SAPHOICNYT,eng,0:33.5,no,How easy it ease to teach or learn languages?
+X_ZPGLUJVQFD,eng,0:33.1,good,is good and knowledgeable
+X_KYPQNTIRFO,eng,0:35.7,none,linguistics
+X_EQISVDKGNW,fr2,5:20.0,Plusieurs écoutes aurais certainement fluidifier l’expérience.,Il semblerais que les 3 voix appartenais à des personnes d’origine différentes. Je dirais que les femmes étaient une anglaise un allemande.L'homme quand à lui été sans doute français. Les sons avez des consonance plus au moins proche des différentes origines. Il s'agissait certainement pour chacun des participants de reproduire un sons phonétique au mieux.
+X_TMYSXIEZVU,fr2,0:38.2,,Etude de la prononciation des voyelles. Du glissement du son d'une voyelle à une autre
+X_NQBUAYWXIP,fr2,1:4.2,Aucun,Prononciation de certaines syllabes en Français par des étrangers 
+X_OEQPNHIJFV,fr2,0:10.0,Non,Non
+X_AGMZUVQKOS,fr2,1:8.9,pas de soucis particulier,comment les francophones percoivent et reproduisent les sont typiquement anglais (th)
+X_GRJBCDHPSW,fr2,1:38.1,Je trouve que il y a pas assez d'options dans la premiere page,Vous aller utiliser sa pour créer des phrases par un ordinateur
+X_QVISREZGDK,fr2,1:42.8,Au fur et à mesure de l'expérience on fait de plus en plus attention à certaines choses telles que la longueur des voyelles. C'est intéressant,Peut être comparer la capacité à entendre certaines variations dans une syllabe en fonction de la langue natale de la personne qui écoute?
+X_OQCDYZUPRA,fr2,1:45.3,Non,Compréhension orale de mots suivant si ils sont prononcés par une personne parlant la même langue que vous ou une autre peu importe la langue du mot
+X_JLDFQWNCMZ,fr2,1:35.3,non tout est très clair et les touches sont bien pensées,Apporter une méthodologie pour améliorer la prononciation chez l'humain ou la machine. Je n'en sais trop rien.
+X_NVMXZAKILY,fr2,1:24.3,Aucun problème technique. Etude un peu longues beaucoup d'enregistrement à écouter et quelques son qui se ressemblent beaucoup,Prononciation des différents syllabes.
+X_KELORDTBZN,fr2,0:22.7,c'était agréable aucune difficultés,non
+X_YDLIAROTNG,fr2,0:5.0,,
+X_YDLIAROTNG,fr2,0:5.0,,
+X_BEJTGWCKVO,fr2,3:1.7,non  - pas vraiment - ,la compréhension sur les prononciations 
+X_QFNVUYJXAL,fr2,0:5.3,,
+X_QFZTOGWXPJ,fr2,2:6.1,Ceci est un test similaire à celui vécu lorsque j'étais avec l'agence de renseignement,Programmation neuro-linguistique?
+X_HYBUVIRAWE,fr2,1:54.2,Pas de problèmes de chargements expérience simple et prise en main rapide,Reconnaissance d'un français natif essayant de parler anglais? Reconnaissance de l'accent français?
+X_YXIUOCPNQG,fr2,11:52.2,Une tache qui nécessite une grande concentration sinon tu n'as pas la deuxième chance. C’était une bonne expérience mais parfois même si j’étais attentive je pouvais me tromper et j'avais des doutes. Je n'ai pas remarqué de problèmes techniques mais peut-être il sera mieux de pouvoir rafraichir la deuxième fois l'audio.,Je pense que c'est lié à l'impossible de rafraichir la deuxième fois. Peut-être c'est une recherche sur la mémorisation des sons.
+X_AGUMNIESTR,fr2,0:0.9,,
+X_MCWPRBKYSJ,fr2,1:45.1, - Parfois les sons sont très similaires j'aimerais avoir une deuxième chance de réécouter l'audio., - Je pense que le test est de voir si les gens peuvent dire la petite différence entre le son
+X_JTGXDPAFIZ,fr2,0:36.3,impeccable,améliorer la reconnaissance vocale
+X_CRPNYQDVWZ,fr2,0:1.3,,
+X_BRZUCQWISN,fr2,0:42.2,j'ai pas de remarque  s'était une très belle expérience,non 
+X_OWZGTSAKJU,fr2,2:2.1,L'expérience s'est plutôt bien passée. Le fait de ne pas pouvoir revenir en arrière m'a perturbée : il est possible que j'ai raté un ou deux exemples en me trompant de touche et j'aurais aimé rectifier l'erreur.,La plupart des sons me sont quasiment inconnus en tant que locutrice française j'imagine que le but est d'étudier la capacité à distinguer des sons peu utilisés dans son langage natif.
+X_UPSJLYCMOG,fr2,2:59.0,très simple à utiliser chargement rapide,améliorer la compréhension d'un assistant vocal avec les spécificités d'accent
+X_UDFQBERGYN,fr2,4:54.3,Intéressante expérience avec l'utilisation du clavier. -  - Aucun problème technique. ,Aucune idée j'arrive à reconnaitre quelques sons qui me paraissent de langues germaniques...  -  - 
+X_OQDBPGSKFT,fr2,2:27.6,Je suis très satisfait de l'experience je n'ai eu aucun problème techniques avec le site.,Je pense que l'objectif est de savoir si il y a une correlation entre la connaissance d'un language et le niveau en phonétique et écoute
+X_JNKAZUCGYW,fr2,0:6.8,,
+X_NKWCLOGHTM,fr2,1:53.7,J'ai bien aimé et apprécié la difficulté parfois à déterminer ce qui était le plus ressemblant.,Peut-être vérifier sur quoi je me base quand j'identifie un son. 
+X_BSQPAVLRWG,fr2,0:58.7,Une disctintion moins forte entre les personnes,Je pense que c'est pour des logiciels de reconnaissant vocale
+X_DYTAECVWRJ,fr2,0:29.2,Pas de problèmes experience tres fluide.,
+X_PHQTKFLVSG,fr2,2:50.8,Aucun problème technique à signaler. Il aurait été préférable d'avoir la possibilité d'écouter à nouveau les enregistrements à certain moment.,Si les personnes qui sont des locuteurs d'une ou de plusieurs langues arrivent à distinguer les sons.
+X_FIXNAVYUDM,fr2,2:23.0,ouij`aime bien cette experience ...je voudrais beaucoupe de travaille ,c`est tres bien
+X_LXHWVSOYAI,fr2,0:47.3,Non aucune remarque,Peut être avoir un échantillon de voix afin d'aider un robot intelligent à comprendre un ordre mais avec des accents différents.
+X_LFTRYAUGVB,fr2,0:10.4,non,non
+X_VUMRJHQCPZ,fr2,2:1.7,Les pauses sont les bienvenues.,Vous cherchez peut être à observer la manière dont le cerveau associe un son parlé à une syllabe écrite en fonction de la langue maternelle ?
+X_WGDNORQFAX,fr2,0:7.5,,
+X_MYELBFTGPW,fr,0:1.7,,
+X_WQKPJEBHZS,fr,1:6.4,Quelques audios semblaient tous très similaires et il était difficile de les départager,
+X_THMBORALCV,fr,3:52.8,Aucun problème le site était rapide et efficace. ,Vous faites peut-être une recherche sur la capacité de différencier certains sons pour les francais
+X_VMLHQJPNOB,fr,0:6.1,.,.
+X_CKTHZROWXE,fr,1:19.1,Expérience intéressante sons clairs aucun souci technique,La perception des syllabes/langues étrangères en fonction de l'expérience avec une autre langue que celle maternelle
+X_HRTYWONGAJ,fr,1:13.2,Aucun problème rencontré lors de cette expérience. - Basé sur la phonétique et la prononciation.,Très utile pour les assistants vocal !
+X_VKBNSAQJXD,fr,1:18.3,Je n'ai aucune remarque à formuler pas le moindre souci technique.,Peut-être déterminer la concentration lorsqu'un choix doit s'opérer très rapidement. 
+X_OXVYFUSCHK,fr,0:38.1,temps de concentration trop long pas de problème technique,non
+X_EUYHWQPJLS,fr,0:55.2,Pas de problemes experience interessante,un nouveau logiciel de speech to text qui detecte n'importe quel accent
+X_USZBLRTMAX,fr,3:15.2,Interessant des fois un peu difficile à entendre la difference. Jaimerais avoir la chance de reecouter les clips si necessaire. Deux fois je me suis trompe en appuyant sur le mauvais bouton. Il n y a pas un moyenne de corriger les erreurs.,Les tradutions sur google? Les differents sons dans les langues etrangeres 
+X_SVUMHQNCPZ,fr,1:18.1,Expérience sympatique aucun problème technique.,Trouver de nouveaux moyens d'enseignement de langues étrangères ?
+X_MVBTZHSCWQ,fr,1:20.0,C'était assez différent et intéressant. ,Chacun perçoit les langues étrangères différemment cette étude est peut être pour essayer de démontrer quelque chose par rapport a l'entente et la compréhension de chacun 
+X_DBOTKHAVMZ,fr,0:9.5,,
+X_NXHLSMGEWA,fr,1:51.4,Très bonne expérience par contre par deux fois mon doigt crispé à cliqué le mauvais choix. Désolée.,Pour adapter les assistants vocaux aux différents accents du même langue.
+X_CBAPIQOTWD,fr,1:18.0,Expérience intéressante qui fait travailler l'écoute. - Cependant chargement de la page assez lent. ,Repéré les similarités/différences de son entre différentes langues.
+X_VPCELTFWUX,fr,0:56.7,Aucun problème à signaler,Aucune idée précisément mais peut-être quelque chose sur la perception des différents accents
+X_XANOPYMUDI,fr,2:41.9,Je n'ai eu aucun problèmes avec le site internet. Toutes les instructions étaient claires et l'utilisation était simple.,Je pense que votre recherche consiste à mesurer la vitesse d'action des utilisateurs avec votre site web et ses outils. Le grand nombres de tests audio met à l'épreuve l'utilisateur qui répète la même action et va probablement de plus en plus vite.
+X_WNSMJKLZIB,fr,0:56.7,RAS,Analyse d'échantillon pour entraîner un modèle de machine learning
+X_EMQXTCOVIU,fr,1:29.4,Certains mots ne ressemblaient ni au son 1 ni au son 2 j'ai donc du me rabattre sur comment était prononcé le mot uniquement (si l'accent ressemblait à celui du son de base par exemple).,Aucune.
+X_AFKNOWEDBR,fr,1:44.5,Aucuns problèmes tout s'est passé pour le mieux.,Je pense que la recherche a un rapport avec des applications a détection vocale
+X_PKFUNXOWAT,fr,0:3.3,,
+X_DVOHUJWGCF,fr,2:50.6,Plutôt amusant au bout du compte,La manière dont on identifie certains phonèmes selon la langue maternelle du locuteur et de l'auditeur. -  - Sur certains phonèmes clairement il y avait des locuteurs francophones anglophones et qui me paraissaient germanophones. -  - Après le but final ça mystère j'ai des idées sur la manière dont le test a été conçu à quoi ça servira je l'ignore
+X_WUDALSMEOX,fr,1:6.5,Il et bon. Pas de probleme sur le site web. pas de commentaires.,No
+X_JLZNHKVMPY,fr,0:4.3,,
+X_MORGPWHJXZ,fr,1:41.8,cest une expérience intéressante je n'ai pas eu de problèmes techniques. pas de remarques,évaluer la perception des sons parmi différentes personnes
+X_XWKLRVNIFZ,fr,1:29.2,Aucun problème technique avoir la possibilité de faire un retour serai utile.,créer des IA pouvant comprendre une langues étrangère afin d'en faire des sous-titres.
+X_DOQECKBAFY,fr,3:42.0,J'ai trouvé ça intéressant et simple d'utilisation même sans connaitre la nature de la recherche. J'aurais aimé pouvoir réécouté certains sons.,Je pense que votre recherche est sur la perception des sons en fonction de l'âge et du côté dominant (gaucher/droitier).
+X_UYEXDJTHKB,fr,1:53.8,c'etait interresant de voir les differentes intonations aucun probleme technique pas de remarque particuliaire,approfondir la reconnaissance vocale notamment sur l'intonnation
+X_JZMYXRLAIV,fr,2:2.6,Présentation sommaire compensée par une rapidité d'affichage et une facilité de lecture appréciable.,Enseignement de langue en ligne ici Allemand/Français
+X_DHVJPANYEF,fr,2:42.9,Tout s'est bien passé. La navigation au clavier est agréable.,Je pense que ce pourrait être une recherche sur la manière de percevoir différents phonèmes en fonction de la langue maternelle.
+X_UCEPVALKHR,fr,8:54.4,"Dans certains cas les deux sons étaient très différents du premier (on entend quelque chose comme ""zaf"" puis ""zif"" et ""zif"") et il était difficile de savoir quoi choisir. -  - De plus il aurait été utile de pouvoir relire les sons. Ils ne sont lus qu'une fois et cela peut induire un biais. Par exemple j'ai souvent entendu le son de base puis le premier son auquel le comparer en me disant ""oui il y ressemble beaucoup"" puis entendu le deuxième en me disant ""il y ressemble encore plus"". J'ai l'impression d'avoir donc plus souvent répondu que le deuxième son était plus similaire alors qu'il est possible que ces réponses aient été biaisées. Pour certains examples j'aurais donc aimé pouvoir rejouer les sons.",J'ai cru entendre des accents anglais et allemands entre autres. Je pense que votre recherche cherche à établir une sorte de tableau de proximité entre les différentes voyelles existant en Europe (dans le monde?). Peut-être aussi pour les consonnes.
+X_HDOSBQVEYU,fr,0:57.7,Pas de problèmes techniques.,Il s'agit peut-être d'une amélioration de synthèse vocale.
+X_ARQPUJXNZG,fr,0:1.9,,
+X_YBNMPIHUOK,fr,0:27.2,pas de problemes,franchement aucune idee
+X_DHWJERYCPX,fr,0:50.9,aucun problême tout ok.,Je pense que c'est pour identifier les sons étrangers et voir si on les reconnait facilement.
+X_EDCVOQXTJH,fr,0:20.1,pas de pb techniques,pas d'idée
+X_KMDQCFATJZ,fr,0:59.1,c'est une bonne expérience intéressante je n'ia pas eu de probleme avec le site web,comprendre quelles sont les sons d'une langue étrangère que l'on capte en premier
+X_XVOLYUGRPH,fr,1:11.2,Aucun problemes techniques. Aucune remarques.,Reconnaissance vocale pour IA.

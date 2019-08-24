@@ -1,0 +1,20 @@
+Nous recueillons des informations sur la performance des participants et sur leur opinion. Veuillez répondre aux questions suivantes.
+None
+
+Avec quel navigateur web avez-vous passé cette expérience ?
+Choicebox Chrome, Firefox, IE, Safari, Opera, Autre, Je ne sais pas
+
+Comment avez-vous écouté les enregistrements sonores ?
+Choice Casque/Écouteurs, Enceintes
+
+Y avait-il du bruit ou d'autres distractions pendant le temps de votre expérience ?
+Choice Oui, Non
+
+Quel était votre moyen de connection à internet ?
+Choice Wi-Fi, Câble ethernet
+
+Sur une échelle de 1-5, avec quelle vitesse les pages se sont-elles chargées ?
+Choicebox 1 Très lentement, 2, 3 Plutôt bien, 4, 5 Immédiatement
+
+Sur une échelle de 0-100, cette expérience vous a-t-elle satisfait ?
+Sliding_Scale 0, 100, Très insatisfait, Très satisfait

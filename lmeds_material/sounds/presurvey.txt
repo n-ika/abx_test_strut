@@ -1,0 +1,39 @@
+<b><font size="4">Please respond to every question, otherwise you won't get paid</font></b>
+None
+
+How old are you?:
+Choicebox 18-29 years, 30-39 years, 40-49 years, 50-59 years, 60-69 years, 70 or older
+
+
+Are you … ?
+Choice Left-handed, Right-handed
+
+Do you have any experience with a language other than English?
+Choicebox I only know English., I have some experience with a language other than English (answer questions below). 
+
+Consider the language other than English that you have the most experience with or feel the most comfortable in. How much exposure have you had to this language?
+Choicebox N/A I have no experience with a second language.,I consider myself a native speaker.,A lot.  I have lived or worked in an environment dominated by this language for years.,A fair amount of exposure. I have lived or worked in an environment dominated by this language for months .,Some exposure. I studied this language for more than two years.,Very little exposure. I studied this language for less than two years. 
+
+For this language, how proficient do you consider yourself? 
+Choicebox N/A I have no experience with a second language.,I consider myself a native speaker.,Near native/fluent. Can understand complicated ideas and have complex conversations with native speakers.,Advanced. Can understand almost everything and speak without much difficulty with native speakers.,Intermediate. Can understand the main ideas and talk about daily life.,Beginner.  Can understand some sentences and use simple phrases. 
+
+
+Do you have any problems with your hearing or vision (except wearing glasses)?
+Choice Yes, No
+
+Have you been diagnosed with a speech or language impairment? 
+Choice Yes, No
+
+Have you ever taken a linguistics course?
+Choice Yes, No
+
+<sublist>
+A phonetics course?
+Choice Yes, No
+
+A phonology course?
+Choice Yes, No
+</sublist>
+
+
+

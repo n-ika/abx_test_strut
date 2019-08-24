@@ -1,0 +1,34 @@
+name, wer, decoding, lm
+00_decode_entwv_jul_fr, %WER 89.81 [ 7206 / 8024 - 163 ins - 1761 del - 5282 sub ], wer_19_1.0, lm_julien_fr
+01_decode_entwv_phone_en, %WER 141.79 [ 11377 / 8024 - 3353 ins - 1275 del - 6749 sub ], wer_20_1.0, lm_phone_entwv1_en
+01_decode_entwv_phone_fr, %WER 175.75 [ 14102 / 8024 - 6175 ins - 323 del - 7604 sub ], wer_20_1.0, lm_phone_entwv1_fr
+01_decode_word_phok_entwv_en, %WER 94.37 [ 7572 / 8024 - 130 ins - 3957 del - 3485 sub ], wer_20_1.0, lm_word003 
+01_decode_word_phok_int_en, %WER 100.30 [ 337 / 336 -1 ins - 2 del - 334 sub ], wer_20_0.5, lm_word_int1
+01_decode_word_phok_int_fr, %WER 201.19 [ 676 / 336 -348 ins - 0 del - 328 sub ], wer_20_1.0, lm_word_int1_fr
+01flat_decode_entwv_phone_en, %WER 252.93 [ 20295 / 8024 - 12271 ins - 13 del - 8011 sub ], wer_20_1.0, flatlm_phone_entwv1_en
+01flat_decode_entwv_phone_fr, %WER 258.21 [ 20719 / 8024 - 12959 ins - 5 del - 7755 sub ], wer_20_1.0, flatlm_phone_entwv1_fr
+03_decode_word_phok_entwv_en, %WER 58.39 [ 4685 / 8024 - 60 ins - 1702 del - 2923 sub ], wer_17_0.0, lm_word_entwv3_en
+05_decode_word_phok_entwv_en, %WER 59.26 [ 4755 / 8024 - 28 ins - 2079 del - 2648 sub ], wer_20_0.0, lm_word_entwv5_en
+05_decode_word_phok_entwv_fr, %WER 98.29 [ 7887 / 8024 - 783 ins - 1289 del - 5815 sub ], wer_20_1.0, lm_word_entwv5_fr
+05_decode_word_phok_int_en, %WER 99.70 [ 335 / 336 - 0 ins - 0 del - 335 sub ], wer_13_0.0, lm_word_int5_en
+05_decode_word_phok_int_fr, %WER 194.05 [ 652 / 336 - 323 ins - 0 del - 329 sub ], wer_20_0.5, lm_word_int5_fr
+decode_1ph_entwv_fr, %WER 175.75 [ 14102 / 8024 - 6175 ins - 323 del - 7604 sub ], wer_20_1.0, lm_phone_entwv1_fr
+decode_corpus_1phn_julien_en, %WER 186.71 [ 58642 / 3140 - 27239 ins - 583 del - 30820 sub ], wer_20_1.0, lm_phone_corpus_en
+decode_entwv_5grword_intLM_en, %WER 99.95 [ 8020 / 8024 - 1 ins - 5250 del - 2769 sub ], wer_20_0.5, lm_word_int5_en
+decode_entwv_corpus-phone-1ph_en, %WER 147.30 [ 11819 / 8024 - 3795 ins - 1099 del - 6925 sub ], wer_20_1.0, lm_corpus_phone_uniph_en
+decode_entwv_julien_en, %WER 109.52 [ 8788 / 8024 - 764 ins - 902 del - 7122 sub ], wer_20_1.0, lm_julien_en
+decode_entwv_julien_en_flat, %WER 104.29 [ 8368 / 8024 - 344 ins - 826 del - 7198 sub ], wer_20_1.0, flatlm_jul_en
+decode_entwv_julien_fr, %WER 89.81 [ 7206 / 8024 - 163 ins - 1761 del - 5282 sub ], wer_19_1.0, lm_julien_fr
+decode_entwv_julien_fr_flat, %WER 98.93 [ 7938 / 8024 - 635 ins - 322 del - 6981 sub ], wer_20_1.0,  flatlm_jul_fr
+decode_julien_en, %WER 100.73 [ 31636 / 3140 - 228 ins - 2065 del - 29343 sub ], wer_20_1.0, lm_julien_en
+01_decode_entwv_jul-ph_en, %WER 172.63 [ 13852 / 8024 - 5828 ins - 345 del - 7679 sub ], wer_20_1.0, lm_jul_ph_en
+01_decode_entwv_jul-ph_fr, %WER 149.64 [ 12007 / 8024 - 4038 ins - 1109 del - 6860 sub ], wer_20_1.0, lm_jul_ph_fr
+03_decode_jul_en [corpus_test-English], %WER 30.50 [ 9581 / 3140 - 1223 ins - 1165 del - 7193 sub ], wer_9_0.5, lm_julien_en
+01_decode_entwv_jul-ph_flat_en, %WER 274.13 [ 21996 / 8024 - 13972 ins - 12 del - 8012 sub ], wer_20_1.0, lm_jul_ph_flat_en
+01_decode_entwv_jul-ph_flat_fr, %WER 252.93 [ 20295 / 8024 - 12352 ins - 12 del - 7931 sub ], wer_20_1.0, lm_jul_ph_flat_fr
+03_decode_jul_fr [corpus_test-French], %WER 7.77 [ 188 / 2419 - 18 ins - 126 del - 44 sub ], wer_20_0.0, lm_julien_fr
+01decode_jul-ph_en [corpus_test-English], %WER 186.72 [ 58646 / 3140 - 27238 ins - 582 del - 30826 sub ], wer_20_1.0, lm_jul_ph_en
+01_decode_corp-1ph_jul_en, %WER 166.77, [ 52379 / 31408 - 20971 ins - 1056 del - 30352 sub ], wer_20_1.0, lm_corpus_phone_uniph_en
+03_decode_word_phok_entwv_fr,%WER 99.24, [ 7963 / 8024 - 887 ins - 1270 del - 5806 sub ], wer_17_1.0, lm_word_entwv3_fr
+01_decode_corp-1ph_jul_fr, %WER 174.79 [ 14025 / 8024 - 6027 ins - 62 del - 7936 sub ], wer_20_1.0, lm_corpus_phone_uniph_fr
+decode_corpus_1phn_julien_fr, %WER 184.62 [ 4466 / 2419 - 2050 ins - 61 del - 2355 sub ], wer_20_1.0, lm_corpus_phone_uniph_fr

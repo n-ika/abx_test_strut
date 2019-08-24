@@ -1,0 +1,336 @@
+spk01_triplet003_02 SH IH S 
+spk01_triplet006_01 IH 
+spk01_triplet008_01 V L AH Z 
+spk01_triplet009_02 V OW B 
+spk01_triplet010_01 SH OW 
+spk01_triplet011_02 S IH SH 
+spk01_triplet014_01 Z UH 
+spk01_triplet015_02 Z AE 
+spk01_triplet016_01 IH K 
+spk01_triplet017_02 S AH SH 
+spk01_triplet018_01 Z IH F 
+spk01_triplet021_02 CH AE S 
+spk01_triplet022_01 F AE SH 
+spk01_triplet024_01 Z AE 
+spk01_triplet026_01 Z IH D 
+spk01_triplet028_01 Z IH F 
+spk01_triplet030_01 Z AY D 
+spk01_triplet032_01 Z AE SH 
+spk01_triplet033_02 V IY D 
+spk01_triplet034_01 Z AA 
+spk01_triplet043_02 V IY D 
+spk01_triplet044_01 Z IH F 
+spk01_triplet045_02 V AO D 
+spk01_triplet047_02 S AA D 
+spk01_triplet048_01 Z AH 
+spk01_triplet049_02 Z AA S 
+spk01_triplet050_01 Z AA S 
+spk01_triplet053_02 S AO 
+spk01_triplet054_01 Z AE 
+spk01_triplet055_02 V AA 
+spk01_triplet056_01 P L 
+spk01_triplet059_02 V AE 
+spk01_triplet060_01 V AA 
+spk01_triplet061_02 SH AH 
+spk01_triplet066_01 S OW D 
+spk01_triplet067_02 V OW B 
+spk01_triplet070_01 F AA 
+spk01_triplet072_01 S AA 
+spk01_triplet073_02 V AA F 
+spk01_triplet075_02 SH AO 
+spk01_triplet076_01 SH AE 
+spk01_triplet077_02 S IH 
+spk01_triplet081_02 DH IH D 
+spk01_triplet082_01 Z AH 
+spk01_triplet085_02 F AE SH 
+spk01_triplet087_02 V AH Z 
+spk01_triplet090_01 F AE 
+spk01_triplet091_02 Z AE 
+spk01_triplet092_01 Z AA B 
+spk01_triplet096_01 V AY SH 
+spk01_triplet097_02 V AE 
+spk01_triplet098_01 Z AA S 
+spk01_triplet099_02 Z AE 
+spk01_triplet103_02 Z IY D 
+spk01_triplet104_01 S IH 
+spk01_triplet105_02 Z IH D 
+spk01_triplet107_02 W AH SH 
+spk01_triplet109_02 Z AE SH 
+spk01_triplet111_02 Z IH S 
+spk02_triplet001_01 DH AH 
+spk02_triplet002_02 AE D 
+spk02_triplet004_02 SPN 
+spk02_triplet005_01 K UW 
+spk02_triplet007_01 SPN 
+spk02_triplet012_02 T R EH 
+spk02_triplet013_01 SH IH 
+spk02_triplet019_01 V AE 
+spk02_triplet020_02 IH 
+spk02_triplet023_01 SPN 
+spk02_triplet025_01 DH AE 
+spk02_triplet027_01 DH AH 
+spk02_triplet029_01 F EH 
+spk02_triplet031_01 Z AH 
+spk02_triplet035_01 K L 
+spk02_triplet036_02 Z EH S 
+spk02_triplet037_01 IH D 
+spk02_triplet038_02 SPN 
+spk02_triplet039_01 L 
+spk02_triplet040_02 Z AH 
+spk02_triplet041_01 V EH Z 
+spk02_triplet042_02 V EH SH 
+spk02_triplet046_02 Y 
+spk02_triplet051_01 UW 
+spk02_triplet052_02 UW 
+spk02_triplet057_01 SPN 
+spk02_triplet058_02 V L D 
+spk02_triplet062_02 V AH Z 
+spk02_triplet063_01 Z EH 
+spk02_triplet064_02 AE D 
+spk02_triplet065_01 V AH 
+spk02_triplet068_02 UW 
+spk02_triplet069_01 SPN 
+spk02_triplet071_01 V EH D 
+spk02_triplet074_02 L 
+spk02_triplet078_02 T IH 
+spk02_triplet079_01 CH IH 
+spk02_triplet080_02 Z AH 
+spk02_triplet083_01 L AH 
+spk02_triplet084_02 V AH 
+spk02_triplet086_02 DH EH D 
+spk02_triplet088_02 F IY 
+spk02_triplet089_01 AH V AH 
+spk02_triplet093_01 SPN 
+spk02_triplet094_02 SPN 
+spk02_triplet095_01 Z AH SH 
+spk02_triplet100_02 DH AY 
+spk02_triplet101_01 V AE 
+spk02_triplet102_02 L AH 
+spk02_triplet106_02 Z EH SH 
+spk02_triplet108_02 IH 
+spk02_triplet110_02 SPN 
+spk02_triplet112_02 L AH 
+spk03_triplet001_02 V AH 
+spk03_triplet002_01 V AE 
+spk03_triplet004_01 V IH SH 
+spk03_triplet005_02 T IH D 
+spk03_triplet007_02 F AE 
+spk03_triplet012_01 CH AE 
+spk03_triplet013_02 SH EH 
+spk03_triplet019_02 F AH 
+spk03_triplet020_01 V AH B 
+spk03_triplet023_02 V AE D 
+spk03_triplet025_02 DH IH D 
+spk03_triplet027_02 V AY 
+spk03_triplet029_02 F AE 
+spk03_triplet031_02 V EH 
+spk03_triplet035_02 IH D 
+spk03_triplet036_01 V IH T 
+spk03_triplet037_02 L AH T 
+spk03_triplet038_01 DH AE D 
+spk03_triplet039_02 V AH B 
+spk03_triplet040_01 V AE 
+spk03_triplet041_02 B AE 
+spk03_triplet042_01 IH SH 
+spk03_triplet046_01 V AE 
+spk03_triplet051_02 V AE 
+spk03_triplet052_01 SH AE 
+spk03_triplet057_02 DH AE D 
+spk03_triplet058_01 V AY 
+spk03_triplet062_01 B AE 
+spk03_triplet063_02 V AH 
+spk03_triplet064_01 IH D 
+spk03_triplet065_02 V AE 
+spk03_triplet068_01 V AE 
+spk03_triplet069_02 V AE 
+spk03_triplet071_02 AE 
+spk03_triplet074_01 V AE 
+spk03_triplet078_01 SH IH D 
+spk03_triplet079_02 T SH AH 
+spk03_triplet080_01 Z AH D 
+spk03_triplet083_02 B AH 
+spk03_triplet084_01 B AH 
+spk03_triplet086_01 V AH B 
+spk03_triplet088_01 SPN 
+spk03_triplet089_02 L AH T 
+spk03_triplet093_02 IH SH 
+spk03_triplet094_01 DH IH D 
+spk03_triplet095_02 V IH SH 
+spk03_triplet100_01 V AH 
+spk03_triplet101_02 V EH 
+spk03_triplet102_01 IH D 
+spk03_triplet106_01 V IH SH 
+spk03_triplet108_01 N AE D 
+spk03_triplet110_01 SH IH T 
+spk03_triplet112_01 V AA 
+spk04_triplet003_01 SH AH 
+spk04_triplet006_02 V AH T 
+spk04_triplet008_02 D AH Z 
+spk04_triplet009_01 SPN 
+spk04_triplet010_02 T SH AE 
+spk04_triplet011_01 K IH SH 
+spk04_triplet014_02 UW D 
+spk04_triplet015_01 DH AH 
+spk04_triplet016_02 SPN 
+spk04_triplet017_01 OW SH 
+spk04_triplet018_02 F AE 
+spk04_triplet021_01 SH IY HH 
+spk04_triplet022_02 DH AE SH 
+spk04_triplet024_02 V EH D 
+spk04_triplet026_02 N L D 
+spk04_triplet028_02 D AH 
+spk04_triplet030_02 T EH D 
+spk04_triplet032_02 S SH 
+spk04_triplet033_01 DH AH 
+spk04_triplet034_02 V AE N 
+spk04_triplet043_01 D SH 
+spk04_triplet044_02 IH 
+spk04_triplet045_01 L D IY 
+spk04_triplet047_01 AY 
+spk04_triplet048_02 F AE 
+spk04_triplet049_01 AH 
+spk04_triplet050_02 DH AE 
+spk04_triplet053_01 EH K 
+spk04_triplet054_02 SPN 
+spk04_triplet055_01 L K 
+spk04_triplet056_02 OW B EH 
+spk04_triplet059_01 AH 
+spk04_triplet060_02 EY B EH 
+spk04_triplet061_01 SH EH N 
+spk04_triplet066_02 D AH 
+spk04_triplet067_01 IY D 
+spk04_triplet070_02 EH D 
+spk04_triplet072_02 SPN 
+spk04_triplet073_01 V AE 
+spk04_triplet075_01 SH EH D 
+spk04_triplet076_02 SH AE D 
+spk04_triplet077_01 SPN 
+spk04_triplet081_01 V AE D 
+spk04_triplet082_02 D AH 
+spk04_triplet085_01 L SH 
+spk04_triplet087_01 SPN 
+spk04_triplet090_02 V AE 
+spk04_triplet091_01 IH 
+spk04_triplet092_02 V EH D 
+spk04_triplet096_02 D SH 
+spk04_triplet097_01 AH EH 
+spk04_triplet098_02 IH HH 
+spk04_triplet099_01 Z IY D 
+spk04_triplet103_01 DH AE 
+spk04_triplet104_02 UW 
+spk04_triplet105_01 DH AH 
+spk04_triplet107_01 M AH SH 
+spk04_triplet109_01 V AE S 
+spk04_triplet111_01 V AE 
+spk05_triplet002_03 DH AH 
+spk05_triplet004_03 D 
+spk05_triplet006_03 D 
+spk05_triplet010_03 AE 
+spk05_triplet014_03 SPN 
+spk05_triplet016_03 D 
+spk05_triplet024_03 D 
+spk05_triplet026_03 D 
+spk05_triplet028_03 DH AA 
+spk05_triplet034_03 D 
+spk05_triplet040_03 DH AH 
+spk05_triplet042_03 D 
+spk05_triplet044_03 D 
+spk05_triplet048_03 AA 
+spk05_triplet052_03 UW 
+spk05_triplet060_03 D 
+spk05_triplet062_03 AA Z AH 
+spk05_triplet070_03 D 
+spk05_triplet072_03 D 
+spk05_triplet074_03 L 
+spk05_triplet078_03 SPN 
+spk05_triplet084_03 DH AH 
+spk05_triplet088_03 SPN 
+spk05_triplet096_03 D SH 
+spk05_triplet106_03 SPN 
+spk05_triplet108_03 D 
+spk05_triplet110_03 SPN 
+spk05_triplet112_03 AA 
+spk06_triplet008_03 V 
+spk06_triplet012_03 AH 
+spk06_triplet018_03 AE 
+spk06_triplet020_03 D 
+spk06_triplet022_03 G 
+spk06_triplet030_03 D 
+spk06_triplet032_03 P 
+spk06_triplet036_03 F 
+spk06_triplet038_03 T 
+spk06_triplet046_03 AH 
+spk06_triplet050_03 SPN 
+spk06_triplet054_03 D 
+spk06_triplet056_03 AH B 
+spk06_triplet058_03 OW 
+spk06_triplet064_03 D 
+spk06_triplet066_03 T 
+spk06_triplet068_03 OW 
+spk06_triplet076_03 D 
+spk06_triplet080_03 D 
+spk06_triplet082_03 AA 
+spk06_triplet086_03 D 
+spk06_triplet090_03 V 
+spk06_triplet092_03 V 
+spk06_triplet094_03 D 
+spk06_triplet098_03 IH 
+spk06_triplet100_03 D 
+spk06_triplet102_03 AH 
+spk06_triplet104_03 OW 
+spk07_triplet001_03 Z AH 
+spk07_triplet003_03 SPN 
+spk07_triplet007_03 S AE 
+spk07_triplet009_03 L B 
+spk07_triplet011_03 Z IH SH 
+spk07_triplet013_03 T AH 
+spk07_triplet017_03 Z AA 
+spk07_triplet019_03 Z AH 
+spk07_triplet021_03 K AE S 
+spk07_triplet023_03 Z AH D 
+spk07_triplet025_03 Z IH D 
+spk07_triplet031_03 Z AH 
+spk07_triplet035_03 F IH 
+spk07_triplet043_03 V AH 
+spk07_triplet045_03 L D 
+spk07_triplet047_03 S AH 
+spk07_triplet055_03 V AH 
+spk07_triplet059_03 DH AE 
+spk07_triplet061_03 AH 
+spk07_triplet063_03 Z AH 
+spk07_triplet065_03 Z AE 
+spk07_triplet071_03 V AE 
+spk07_triplet077_03 Z IH 
+spk07_triplet083_03 L AH 
+spk07_triplet085_03 V AE K 
+spk07_triplet087_03 L AH Z 
+spk07_triplet089_03 L K 
+spk07_triplet093_03 G 
+spk07_triplet097_03 V AE 
+spk07_triplet105_03 Z IH D 
+spk08_triplet005_03 S IY 
+spk08_triplet015_03 V AE 
+spk08_triplet027_03 L AH D 
+spk08_triplet029_03 K L 
+spk08_triplet033_03 V EY D 
+spk08_triplet037_03 P 
+spk08_triplet039_03 P 
+spk08_triplet041_03 DH AE 
+spk08_triplet049_03 V AH S 
+spk08_triplet051_03 V AE 
+spk08_triplet053_03 D 
+spk08_triplet057_03 Z AH D 
+spk08_triplet067_03 P 
+spk08_triplet069_03 Z AA 
+spk08_triplet073_03 P 
+spk08_triplet075_03 SPN 
+spk08_triplet079_03 SPN 
+spk08_triplet081_03 V AH 
+spk08_triplet091_03 Z AE 
+spk08_triplet095_03 AH IH SH 
+spk08_triplet099_03 AE 
+spk08_triplet101_03 SPN 
+spk08_triplet103_03 V IY 
+spk08_triplet107_03 P 
+spk08_triplet109_03 V AE 
+spk08_triplet111_03 SPN 

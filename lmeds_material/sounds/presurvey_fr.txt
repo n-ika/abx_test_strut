@@ -1,0 +1,34 @@
+<b><font size="4">Veuillez répondre à toutes les questions, sinon vous ne serez pas payé</font></b>
+None
+
+Quel âge avez-vous ?
+Choicebox 18-29 ans, 30-39 ans, 40-49 ans, 50-59 ans, 60-69 ans, 70 ans ou plus
+
+Êtes-vous … ?
+Choice Gaucher, Droitier
+
+Avez-vous une expérience langagière autre qu'avec le français ?
+Choicebox Je ne connais que le français., J'ai un peu d'expérience avec une langue autre que le français (veuillez répondre aux questions suivantes).
+
+Réflechissez à la langue autre que le français avec laquelle vous avez le plus d'expérience et avec laquelle vous vous sentez le plus à l'aise. À quel point êtes-vous familier avec cette langue ?
+Choicebox Pas applicable - je n'ai pas d'expérience avec une deuxième langue.,Je me considère comme un locuteur natif.,Beaucoup. J'ai vécu ou travaillé dans un environnement dominé par cette langue pendant des années.,J'ai assez d'expérience. J'ai vécu ou travaillé dans un environnement dominé par cette langue pendant des mois.,J'ai un peu d'expérience. J'ai étudié cette langue pendant au moins deux ans.,Très peu d'expérience. J'ai étudié cette langue pendant moins de deux ans.
+
+Vous estimez avoir quel niveau de compétence dans cette langue ?
+Choicebox Pas applicable - je n'ai pas d'expérience avec une deuxième langue.,Je me considère comme un locuteur natif.,Je suis presque un locuteur natif ou j'ai un niveau courant de la langue. Je peux comprendre des idées compliquées et je peux avoir des conversations complexes avec les locuteurs natifs., Je suis un locuteur avancé de cette langue. Je peux comprendre presque tout et je peux comprendre les locuteurs natifs sans grandes difficultés., Intermédiaire. Je peux comprendre les idées principales et je peux parler de la vie quotidienne., Je suis un débutant. Je peux comprendre quelques phrases et je peux utiliser des phrases simples.
+
+Avez-vous des problèmes auditifs ou visuels (à part de porter les lunettes) ?
+Choice Oui, Non
+
+Avez-vous des problèmes d'articulation ou un trouble du langage ?
+Choice Oui, Non
+
+Avez-vous déjà pris un cours de linguistique ?
+Choice Oui, Non
+
+<sublist>
+Un cours de phonétique ?
+Choice Oui, Non
+
+Un cours de phonologie ?
+Choice Oui, Non
+</sublist>

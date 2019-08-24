@@ -1,0 +1,210 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 14.136 
+tiers? <exists> 
+size = 1 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "word" 
+        xmin = 0 
+        xmax = 14.136 
+        intervals: size = 49 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.29321009823378585 
+            text = "SIL" 
+        intervals [2]:
+            xmin = 0.29321009823378585 
+            xmax = 0.45970180716786907 
+            text = "so" 
+        intervals [3]:
+            xmin = 0.45970180716786907 
+            xmax = 0.6929062217724038 
+            text = "very" 
+        intervals [4]:
+            xmin = 0.6929062217724038 
+            xmax = 1.0163470415348868 
+            text = "little" 
+        intervals [5]:
+            xmin = 1.0163470415348868 
+            xmax = 1.150849474899794 
+            text = "did" 
+        intervals [6]:
+            xmin = 1.150849474899794 
+            xmax = 1.2686307896646185 
+            text = "they" 
+        intervals [7]:
+            xmin = 1.2686307896646185 
+            xmax = 1.5769415206048027 
+            text = "appear" 
+        intervals [8]:
+            xmin = 1.5769415206048027 
+            xmax = 1.7133335870964723 
+            text = "to" 
+        intervals [9]:
+            xmin = 1.7133335870964723 
+            xmax = 1.8953861936624588 
+            text = "dwell" 
+        intervals [10]:
+            xmin = 1.8953861936624588 
+            xmax = 2.0305519364556344 
+            text = "on" 
+        intervals [11]:
+            xmin = 2.0305519364556344 
+            xmax = 2.154929870950261 
+            text = "her" 
+        intervals [12]:
+            xmin = 2.154929870950261 
+            xmax = 2.714271486860632 
+            text = "mind" 
+        intervals [13]:
+            xmin = 2.714271486860632 
+            xmax = 3.0217300434288 
+            text = "SIL" 
+        intervals [14]:
+            xmin = 3.0217300434288 
+            xmax = 3.156035958883284 
+            text = "and" 
+        intervals [15]:
+            xmin = 3.156035958883284 
+            xmax = 3.318466894428731 
+            text = "so" 
+        intervals [16]:
+            xmin = 3.318466894428731 
+            xmax = 3.6028060208579498 
+            text = "very" 
+        intervals [17]:
+            xmin = 3.6028060208579498 
+            xmax = 4.263498783315357 
+            text = "inadequate" 
+        intervals [18]:
+            xmin = 4.263498783315357 
+            xmax = 4.6208468415153385 
+            text = "was" 
+        intervals [19]:
+            xmin = 4.6208468415153385 
+            xmax = 4.770067441387318 
+            text = "the" 
+        intervals [20]:
+            xmin = 4.770067441387318 
+            xmax = 5.088005759657867 
+            text = "comfort" 
+        intervals [21]:
+            xmin = 5.088005759657867 
+            xmax = 5.293347774812173 
+            text = "she" 
+        intervals [22]:
+            xmin = 5.293347774812173 
+            xmax = 5.78610530995169 
+            text = "offered" 
+        intervals [23]:
+            xmin = 5.78610530995169 
+            xmax = 7.055018270657581 
+            text = "SIL" 
+        intervals [24]:
+            xmin = 7.055018270657581 
+            xmax = 7.19250445538712 
+            text = "do" 
+        intervals [25]:
+            xmin = 7.19250445538712 
+            xmax = 7.382678608730375 
+            text = "not" 
+        intervals [26]:
+            xmin = 7.382678608730375 
+            xmax = 7.45171175633719 
+            text = "be" 
+        intervals [27]:
+            xmin = 7.45171175633719 
+            xmax = 7.68864056799263 
+            text = "so" 
+        intervals [28]:
+            xmin = 7.68864056799263 
+            xmax = 7.899923546415143 
+            text = "dull" 
+        intervals [29]:
+            xmin = 7.899923546415143 
+            xmax = 8.057133487603771 
+            text = "my" 
+        intervals [30]:
+            xmin = 8.057133487603771 
+            xmax = 8.42038652636373 
+            text = "dearest" 
+        intervals [31]:
+            xmin = 8.42038652636373 
+            xmax = 8.913015436603647 
+            text = "creature" 
+        intervals [32]:
+            xmin = 8.913015436603647 
+            xmax = 9.139838635883184 
+            text = "she" 
+        intervals [33]:
+            xmin = 9.139838635883184 
+            xmax = 9.639166251291453 
+            text = "whispered" 
+        intervals [34]:
+            xmin = 9.639166251291453 
+            xmax = 10.33548769714425 
+            text = "SIL" 
+        intervals [35]:
+            xmin = 10.33548769714425 
+            xmax = 10.416553863242491 
+            text = "you" 
+        intervals [36]:
+            xmin = 10.416553863242491 
+            xmax = 10.555780379424304 
+            text = "will" 
+        intervals [37]:
+            xmin = 10.555780379424304 
+            xmax = 10.85908552041247 
+            text = "quite" 
+        intervals [38]:
+            xmin = 10.85908552041247 
+            xmax = 11.041568935788053 
+            text = "break" 
+        intervals [39]:
+            xmin = 11.041568935788053 
+            xmax = 11.184276114874411 
+            text = "my" 
+        intervals [40]:
+            xmin = 11.184276114874411 
+            xmax = 11.654157954021349 
+            text = "heart" 
+        intervals [41]:
+            xmin = 11.654157954021349 
+            xmax = 12.11491677034451 
+            text = "SIL" 
+        intervals [42]:
+            xmin = 12.11491677034451 
+            xmax = 12.252348085871429 
+            text = "it" 
+        intervals [43]:
+            xmin = 12.252348085871429 
+            xmax = 12.363682082580938 
+            text = "was" 
+        intervals [44]:
+            xmin = 12.363682082580938 
+            xmax = 12.852212446443469 
+            text = "amazingly" 
+        intervals [45]:
+            xmin = 12.852212446443469 
+            xmax = 13.309339507907085 
+            text = "shocking" 
+        intervals [46]:
+            xmin = 13.309339507907085 
+            xmax = 13.412890124457567 
+            text = "to" 
+        intervals [47]:
+            xmin = 13.412890124457567 
+            xmax = 13.509048606389348 
+            text = "be" 
+        intervals [48]:
+            xmin = 13.509048606389348 
+            xmax = 13.873265348207058 
+            text = "sure" 
+        intervals [49]:
+            xmin = 13.873265348207058 
+            xmax = 14.136 
+            text = "SIL" 
